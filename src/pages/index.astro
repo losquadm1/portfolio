@@ -5,10 +5,14 @@ import Container from "@components/Container.astro";
 import AstroLogo from "@assets/images/astro-logo-light-gradient.png";
 import { Content as SampleMarkdown } from "@content/sample-markdown.md";
 import { Image } from "astro:assets";
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
 ---
 
 <Layout title="Astro Starter">
   <Container>
+
+  <Header/>
  <div class="hero">
    <h1>Michael Losquadro</h1>
   <div class="img">
@@ -42,9 +46,10 @@ import { Image } from "astro:assets";
 <img src="/img/UUP.png" alt=""/>
 </a>
 </div>
-
-
   </Container>
+
+<Footer/>
+
 </Layout>
 
 <style>
@@ -76,6 +81,7 @@ filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
 .item img{
   max-width:350px;
   filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
+  transition: 400ms;
 }
 
 .hero{
@@ -86,4 +92,8 @@ filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
     text-align: center;
     justify-items:center;
   }
+
+.item img:hover{
+  filter: brightness(0.7)
+}
 </style>
