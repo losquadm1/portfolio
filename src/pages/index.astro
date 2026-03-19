@@ -12,26 +12,70 @@ import { Image } from "astro:assets";
  <div class="hero">
    <h1>Michael Losquadro</h1>
   <div class="img">
-    <img src="public/img/michael Sticky Note 1.png" alt="Sticky Note Drawing of Michael" />
-  <div>
+    <img src="/img/michael Sticky Note 1.png" alt="Sticky Note Drawing of Michael" />
   </div>
-  <div class="body">
-  <div class="img-text">
-  <img src="public/img/rippedpaper.png" alt=""/>
-  <h2>Check Out Some of My Favorites</h2>
+  </div>
 
+  <div class="imgds">
+    <h2><img src="/img/personal favorites.svg" alt="Check Out My Personal Favorites:"/></h2>
   </div>
-  </div>
+
+  <div class="favorites">
+
+<div class="item">
+<a href="https://losquadm1.github.io/historyofweb/">
+<h3>History of the Web</h3>
+<img src="/img/HistoryOfWeb.png" alt=""/>
+</a>
+</div>
+
+<div class="item">
+<a href="https://chamibrand.netlify.app/">
+<h3>Chami</h3>
+<img src="/img/chami.png" alt=""/>
+</a>
+</div>
+
+<div class="item">
+<a href="https://www.uuphost.org/newpaltzwp/">
+<h3>UUP Website</h3>
+<img src="/img/UUP.png" alt=""/>
+</a>
+</div>
+
+
   </Container>
 </Layout>
 
 <style>
 .img{
-filter: drop-shadow(-10px 10px 10px black .25);
+display: inline;
+max-width: 400px
 }
 
-.img-text{
-filter: drop-shadow(-10px 10px 10px black .25);
+.imgds{
+max-width:550px;
+margin-top: -30px;
+filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
+}
+
+.favorites{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+@media (max-width: 1050px){
+  .favorites{
+  grid-template-columns: auto;
+}}
+
+.item img{
+  max-width:350px;
+  filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
 }
 
 .hero{

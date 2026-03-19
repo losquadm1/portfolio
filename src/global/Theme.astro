@@ -12,8 +12,8 @@ import "@fontsource/karla";
   :root {
     --color-background: #F1F1E0;
     --color-text: black;
-    --color-accent: rgb(0, 200, 255);
-    --color-focus-ring: rgb(255, 0, 255);
+    --color-accent: rgb(255, 0, 0);
+    --color-focus-ring: rgb(255, 0, 0);
 
     --font-body: "Caladea", sans-serif;
     --font-headings: "Caladea", sans-serif;
@@ -27,11 +27,12 @@ import "@fontsource/karla";
 
   /* We can also apply these colors as a default */
   body {
-    background-image: url("public/img/Whitewall.png");
+    background-image: url("/img/Whitewall.png");
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: var(--font-body);
   }
+
   h1,
   h2,
   h3,
@@ -43,9 +44,16 @@ import "@fontsource/karla";
   }
 
 h1{
-    font-size:80px
+    font-size:70px
 
   }
+h2{
+  font-size:50px
+} 
+
+h3{
+  font-size:30px
+}
 
   /* default focus ring styles */
   *:focus-visible {
