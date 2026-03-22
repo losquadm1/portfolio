@@ -3,23 +3,50 @@
 ---
 <div class="header">
     <div class="left">
-<p>Michael Losquadro</p>
-    </div>
+        <a href="/"> <img src="img/michael Sticky Note 1.png" alt=""/> <p> Home</p></a>
+   <!-- <a href="/">Home</a> -->
+    </div> 
     
     <div class="right">
 <p>
-<a href="https://astro.build/">Graphic Design</a>
-<a href="https://astro.build/">Web Design</a>
-<a href="https://astro.build/">"The Chet Show" Thesis Site</a>
-<a href="https://astro.build/">About/Contact</a>
-</p>
+<a href="graphic-design">Graphic Design</a> · 
+<a href="web-design">Web Design</a> · 
+<a href="the-chet-show">"The Chet Show" Thesis Site</a> · 
+<a href="about">About/Contact</a>
+</p> 
     </div>
 </div>
 
 
 
 <style>
-.right a{
+
+.left a:hover{
+    color: rgb(255, 164, 164);
+}
+.left a img{
+    padding-top: 15px;
+}
+.left a{
+    display: flex;
+    align-items: center
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+}
+
+.left img{
+    max-width: 75px;
+    transform: rotate(2deg);
+}
+
+.header p{
+    font-size: 20px;
+}
+.header a{
+    font-weight: 650;
     color: black;
     text-decoration: none;
     font-style: bold;
@@ -33,10 +60,11 @@
         display: flex;
         width: 100vw;
         justify-content: space-between; 
+        align-items: center;
 
-    padding-top:15px;
-    padding-left:40px;
-    padding-right:40px;
+    padding-top:0px;
+    padding-left:35px;
+    padding-right:35px;
     padding-bottom:10px;
     
 }

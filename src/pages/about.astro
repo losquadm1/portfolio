@@ -1,0 +1,48 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SampleComponent from "@components/SampleComponent.astro";
+import Container from "@components/Container.astro";
+import AstroLogo from "@assets/images/astro-logo-light-gradient.png";
+import { Content as SampleMarkdown } from "@content/sample-markdown.md";
+import { Image } from "astro:assets";
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+---
+
+<Layout title="Astro Starter">
+  <Container>
+  <Header/>
+
+  <div class="about">
+    <h1>About/Contact</h1>
+    <img src="img/aboutpicture.webp" alt="Portrait of Michael, he is being surprised by Chet the puppet."/>
+    
+    <div class= bodytext>
+    <p> &#9; Michael Losquadro is a multi-media designer who grew his fundamental skills at SUNY New Paltz through the graphic design program as well as the film and video studies program. He currently specializes in web design with knowledge of web accessibility. He hopes to continue building on UI/UX skills. </p>
+    </div>
+
+</div>
+
+  <Footer/>
+
+  </Container>
+  </Layout>
+
+  <style>
+    .bodytext{ 
+      text-indent: 40px;
+      display: flex;
+      justify-content: center;
+      width:40vw
+    }
+    .about{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .about img{
+        max-width: 30vw;
+}
+    }
+  </style>
