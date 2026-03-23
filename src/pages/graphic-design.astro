@@ -13,35 +13,114 @@ import Footer from "@components/Footer.astro"
   <Container>
 
   <Header/>
-  <div class="dummy">
-   <h1>Graphic Design</h1>
+<div class="h1">
+    <h1>Graphic Design</h1>
+  </div>
+    <div class="content">
 
-  <h2>Sound Hearing Audiology - Logo Commission</h2>
+
+<div class="group">
+
+    <div class="text">
+  <h2>Sound Hearing Audiology</h2>
   <p>(2025)</p>
+      </div>
 
-  <h2>Landline House Show Poster - Poster Commissions</h2>
+      <div class=image>
+  <img src="img/sound hearing audiology.png" alt="Sound Hearing Audiology logo" />
+</div></div>
+
+<div class="group">
+    <div class="text">
+  <h2>Landline Presents Posters</h2>
   <p>(2025)</p>
-
+      </div>
+      
+      <div class="image">
+      <img src="img/LandLinePoster1.png" alt="Landline Poster Number 1"/>
+      <img src="img/LandLinePoster2.png" alt="Landline Poster Number 2"/>
+</div>
+</div>
+<div class="group">
+    <div class="text">    
   <h2>Lost Media Research Project</h2>
   <p>(2025)</p>
+    </div>
 
-  <h2>Gameboy Camera - Pros and Cons Rundown</h2>
+  
+    <div class="image">
+  <img src="img/Lost Media Front.png" alt="Front Side of Lost Media Poster, the image resembles that of an old movie poster."/>
+  <img src="img/Lost Media Back.png" alt="Back Side of Lost Media Poster, this side includes statistics for who knows about lost media and reccomendations for where to find Lost Media"/>
+    </div>
+ </div>
+
+<div class="group">
+    <div class="text">
+  <h2>Gameboy Camera<br>Pros and Cons</h2>
+      
   <p>(2025)</p>
+      </div>
 
+
+    <div class="image">
+  <img src="img/gbcamera.jpg" alt="Poster going over the pros and cons of using a gameboy camera."/>
+      </div>
+</div>
+
+
+<div class="group">
+
+    <div class="text">
   <h2>Tasty Pictures Business Card</h2>
   <p>(2025)</p>
+    </div>
 
+    <div class="image">
+  <img src="img/tastypicfront.png" alt="Tasty Pictures Business Card front"/><br>
+  <img src="img/tastypicback.png" alt="Tasty Pictures Business Card back"/>
+      </div>
+
+</div>
+
+<div class="group">
+    <div class="text">
   <h2>Design Manifesto</h2>
   <p>(2024)</p>
+    </div>
+</div>
 
+<div class="group">
+    <div class="text">
   <h2>Alan Bell Research Magazine</h2>
   <p>(2024)</p>
+    </div>
 
+
+    <div class="pdf">
+  <a href="img/Alan Bell project.pdf"><img src="img/Alan Bell.webp" alt="Alan Bell resarch project article"></a>
+    </div>
+</div>
+
+
+<div class="group">
+    <div class="text">
   <h2>The Economical</h2>
   <p>(2024)</p>
+    </div>
 
+    <div class="pdf">
+  <a href="img/TheEconomical.pdf"><img src="img/TheEconomical.webp" alt="The Economical Article"></a>
+      </div>
+</div>
+
+
+<div class="group">
+    <div class="text">
   <h2>Ǧ</h2>
   <p>(2024)</p>
+      </div>
+</div>
+
 </div>
   <Footer/>
 
@@ -49,15 +128,45 @@ import Footer from "@components/Footer.astro"
   </Layout>
 
   <style>
-
-
-    .dummy{
+    .h1{
         display: flex;
         flex-direction: column; 
         align-items: center;
     }
-
-    .dummy img{
-        max-width: 20vw
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  max-width:70vw;
+        flex-direction: column; 
+        align-items: center;
+}
+    .group{
+      display: flex;
+      flex-direction: row;
+      width:90vw
+    }
+    .text{
+      display: flex;
+      flex-direction: column;
+      width: 600px
+    }
+    .image{
+      display: flex;
+      flex-wrap: wrap;
+      width:300px
+    }
+    .image img{
+      object-fit: contain;
+      padding: 10px;
+    }
+     .pdf{
+      display: flex;
+      flex-wrap: wrap;
+      width:400px
+    }
+    .pdf img{
+      object-fit: contain;
+      padding: 10px;
+      max-width:450px;
     }
   </style>
