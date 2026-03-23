@@ -1,0 +1,140 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SampleComponent from "@components/SampleComponent.astro";
+import Container from "@components/Container.astro";
+import AstroLogo from "@assets/images/astro-logo-light-gradient.png";
+import { Content as SampleMarkdown } from "@content/sample-markdown.md";
+import { Image } from "astro:assets";
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+---
+
+<Layout title="Astro Starter">
+  <Container>
+
+  <Header/>
+  <div class="page">
+
+<h1>UI/UX Design</h1>
+
+<div class="content1">
+
+ <a href="https://michaellosquadrolaunch.netlify.app/">
+ 
+  <div class="image">
+<img src="img/launchweb.webp" alt="">
+  </div>
+
+  <div class="text">
+<h2>My Launch Page</h2>
+  </a>
+<p>(2025)<br>
+Built for SUNY New Paltz’s Fall 2024 Web Design 2 course, this launch page was built to act as a small highway to link together all of my congruent projects. Going for a very simple aesthetic, this was primarily used as a playground for some javascript functionality.<br><br> Make sure to check out this site on desktop for some fun interactive visuals!
+</p>
+  </div>
+
+</div>
+
+<div class="content2">
+<a href="https://uuphost.org/newpaltzwp">
+  <div class="image">
+<img src="img/uupweb.webp" alt="">
+  </div>
+  <div class="text">
+<h2>New Paltz UUP Website</h2>
+  </a>
+<p>(2025)<br>
+Created for SUNY New Paltz’s Fall 2024 Client Design Course I was assigned as an Intern for the UUP’s New Paltz branch. In this role I was assigned to rebuild the New Paltz branch’s wordpress site.<br><br>
+By the end of the project I had completely rebuilt the website from the ground up, bringing it into the modern era of wordpress. as well as updating the site to be usable on mobile devices. <br><br>
+Some of my favorite aspects I built into the new site was implementing mail chimp implementation and improving the workflow from google calendar to the website, creating a more self-sufficient website that operates more freely with less direct involvement from moderators.
+</p>
+  </div> </div>
+
+  <div class="content2">
+ <a href="https://losquadm1.github.io/historyofweb/">
+  <div class="image">
+<img src="img/hotwweb.webp" alt="">
+  </div>
+  <div class="text">
+<h2>History of the Web</h2>
+  </a>
+<p>(2024)<br>
+History of the Web is a guided tour through the internet, hosted by everyone’s favorite artificial personality HostBot! Created for SUNY New Paltz 2024 spring semester’s Web Design I course
+<br><br>
+Disclaimer: This website was primarily programmed for phones, if viewing on a website utilize your web browser’s inspect elements tool to view at the correct aspect ratio (will update in the short future.)
+</p>
+  </div></div>
+
+<div class="content1">
+ <a href="chami">
+  <div class="image">
+<img src="img/chamiweb.webp" alt="">
+  </div>
+  <div class="text">
+<h2>Chami</h2>
+  </a>
+<p>
+(2022)<br>
+Chami is an online messenger app concept created for the 2022 Visual Language course offered at SUNY New Paltz. The project focused around creating a fun and interesting brand as well as some mockups for a few of the app's pages.
+</p>
+  </div></div>
+
+
+</div>
+  
+</div>
+
+  </div>
+  <Footer/>
+
+  </Container>
+  </Layout>
+
+
+  <style>
+.page{
+  flex-direction: column;
+  display: flex;
+  align-items: center
+}
+
+.content1{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+padding-top:20px
+}
+
+.content1 img{
+margin-top:-15px
+}
+
+.content2{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+padding-top:20px
+}
+
+.content2 img{
+margin-top:-10px
+}
+
+.image{
+  width:600px;
+filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
+padding-left:30px;
+padding-right:30px; 
+}
+
+.text{
+  width:600px;
+padding-left:30px;
+padding-right:30px; 
+}
+
+.image img:hover{
+  filter: brightness(0.7)
+}
+
+  </style>

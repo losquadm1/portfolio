@@ -1,0 +1,74 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SampleComponent from "@components/SampleComponent.astro";
+import Container from "@components/Container.astro";
+import AstroLogo from "@assets/images/astro-logo-light-gradient.png";
+import { Content as SampleMarkdown } from "@content/sample-markdown.md";
+import { Image } from "astro:assets";
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+---
+
+<Layout title="Astro Starter">
+  <Container>
+
+  <Header/>
+  <div class="chami">
+   <h1>Chami</h1>
+   <div class="intro">
+<p> &#9;Chami is a mockup messenger app that I had built for my Visual Language class in 2022.
+<br><br>
+ &#9; This project is one of my strongest when it comes to representing my illustrative abilities, especially under the guise of branding. Creating the Chami Bird mascot was a lot of fun and being able to use the adorable little guy to create a fun and unique brand was an aspect of the project I will never forget. I recently brought this project back for my Web Accessibility course, building an updated accessibility-based branding guidelines webpage. Going more in depth on the legibility and inclusiveness of the brand’s UI elements.
+</p>
+    </div>
+   <h2>Mockup</h2>
+   <img src="img/chamimockup.webp" alt="A mockup of the Chami app, consisting of 3 screens. A loading page, the home page and a group chat mockup." />
+   
+   <h2>Accessable Brand Guidelines</h2>
+   <a href="https://chamibrand.netlify.app/">https://chamibrand.netlify.app/ <br> <img
+<img src="/img/chami.png" alt=""/></a>
+
+    <h2>Brand Guidelines(Original)</h2>
+    <iframe src="img/ChamiDesignDoc.pdf" frameborder="0"></iframe>
+
+  </div>
+  <Footer/>
+
+  </Container>
+  </Layout>
+
+  <style>
+.intro{
+    max-width: 800px
+}
+    .iframe{
+        width: 200%;
+    }
+
+    .chami{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .chami img{
+        max-width: 50vw;
+        padding-bottom: 50px;
+    }
+
+    .chami a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chami a img{
+        width:500px;
+        filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
+        padding-left:30px;
+        padding-right:30px; 
+}
+    .chami a img:hover{
+        filter: brightness(0.7)
+}
+  </style>
