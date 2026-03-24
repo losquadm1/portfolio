@@ -19,11 +19,12 @@ import Footer from "@components/Footer.astro"
     <div class="content">
 
 
-<div class="group">
+<div class="group1">
 
     <div class="text">
   <h2>Sound Hearing Audiology</h2>
-  <p>(2025)</p>
+  <p>(2025)<br>
+  A comission for the audiology practice: Sound Hearing Audiology. A fairly simple comission, but a really fun collaberative project.</p>
       </div>
 
       <div class=image>
@@ -33,7 +34,10 @@ import Footer from "@components/Footer.astro"
 <div class="group">
     <div class="text">
   <h2>Landline Presents Posters</h2>
-  <p>(2025)</p>
+  <p>(2025)
+    <br>
+A series of comission pieces from Landline Presents, a local house show venue who hosted a few shows in my neighborhood.
+  </p>
       </div>
       
       <div class="image">
@@ -44,7 +48,8 @@ import Footer from "@components/Footer.astro"
 <div class="group">
     <div class="text">    
   <h2>Lost Media Research Project</h2>
-  <p>(2025)</p>
+  <p>(2025)<br>
+  A research project about lost media; this is one of the most elaborate projects I've ever worked on.<br><br>In the future I'm hoping to create a seperate page here going more in depth on the process behind this piece.</p>
     </div>
 
   
@@ -56,9 +61,10 @@ import Footer from "@components/Footer.astro"
 
 <div class="group">
     <div class="text">
-  <h2>Gameboy Camera<br>Pros and Cons</h2>
+  <h2>Gameboy Camera Pros and Cons</h2>
       
-  <p>(2025)</p>
+  <p>(2025)<br>
+  A class project that I mainly used as an excuse to do some really fun visuals revolving around a gameboy camera I aquired around the time. It was a really nice opertunity to merge my design work with some of my more casual photography.</p>
       </div>
 
 
@@ -72,11 +78,12 @@ import Footer from "@components/Footer.astro"
 
     <div class="text">
   <h2>Tasty Pictures Business Card</h2>
-  <p>(2025)</p>
+  <p>(2025)<br>
+  The front and back to the business cards I made for my film group, one of my favorite personal projects that I've done in recent memory.</p>
     </div>
 
-    <div class="image">
-  <img src="img/tastypicfront.png" alt="Tasty Pictures Business Card front"/><br>
+    <div class="imagev">
+  <img src="img/tastypicfront.png" alt="Tasty Pictures Business Card front"/>
   <img src="img/tastypicback.png" alt="Tasty Pictures Business Card back"/>
       </div>
 
@@ -85,14 +92,20 @@ import Footer from "@components/Footer.astro"
 <div class="group">
     <div class="text">
   <h2>Design Manifesto</h2>
-  <p>(2024)</p>
+  <p>(2024)<br>
+  My Design Manifesto was my final project for my Design Theory and Criticism class. This project went over how I felt at the time moving from creative endevors to more comission based design work. And while now I have more outlets to express that original creative work, this piece still shows how mindsets need to adapt from project to project.</p>
     </div>
-</div>
+
+    <div class="pdf">
+  <a href="img/maifesto.pdf"><img src="img/manifesto.webp" alt="Design Manifesto project"></a>
+    </div>
+
+  </div>
 
 <div class="group">
     <div class="text">
   <h2>Alan Bell Research Magazine</h2>
-  <p>(2024)</p>
+  <p>(2024)<br>A variation of a project I did in my sophmore year Design Theory and Criticism class. For the project we had to make the paper in a more minimalist style, but on the side I wanted to make this version that was heavily inspired by Bell's work in the design field. Focusing on his formatting and image placements in BLK magazine.</p>
     </div>
 
 
@@ -105,7 +118,8 @@ import Footer from "@components/Footer.astro"
 <div class="group">
     <div class="text">
   <h2>The Economical</h2>
-  <p>(2024)</p>
+  <p>(2024) <br> While this project feels simple compared to my more recent work, This was certainly the project that helped me grasp magazine formatting in ways I hadn't in the past.<br><br>
+  Sometime in the near future I would love to fix up the font scaling on this project and bring in some more legability to the final product.</p>
     </div>
 
     <div class="pdf">
@@ -117,8 +131,16 @@ import Footer from "@components/Footer.astro"
 <div class="group">
     <div class="text">
   <h2>Ǧ</h2>
-  <p>(2024)</p>
+  <p>(2024) <br>
+  This project was to create a band based off a random prompt for both the band name and album title. I put this project here as it is a more recent example of my surreal collage work. When I first got into design, the medium that grabbed my attention before any other was surreal collage. So by having this project here I feel it defines how my roots got me to where I am now.</p>
       </div>
+
+  <div class="imagev">
+  <img src="img/g front.jpg" alt="Ǧ album cover front"/>
+  <img src="img/g inside.jpg" alt="Ǧ album cover inside"/>
+  <img src="img/g back.jpg" alt="Ǧ album cover back"/>
+      </div>
+
 </div>
 
 </div>
@@ -134,30 +156,60 @@ import Footer from "@components/Footer.astro"
         align-items: center;
     }
 .content{
-  display: flex;
-  flex-wrap: wrap;
-  max-width:70vw;
+        display: flex;
+        flex-wrap: wrap;
         flex-direction: column; 
         align-items: center;
 }
+
+.group1{
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 50px;
+      width: 1200px;
+    }
+
     .group{
       display: flex;
       flex-direction: row;
-      width:90vw
+      padding-top:50px;
+      padding-bottom: 50px;
+      border-top: .1rem solid black;
+      width: 1200px;
     }
     .text{
       display: flex;
       flex-direction: column;
-      width: 600px
+      width: 600px;
+      padding: 10px;
+      padding-right: 15px
     }
     .image{
       display: flex;
       flex-wrap: wrap;
-      width:300px
+      width: 600px;
+      justify-content: center;
     }
     .image img{
       object-fit: contain;
       padding: 10px;
+      padding-left: 15px;
+
+    }
+      .imagev{
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 600px;
+      justify-content: center;
+      margin-left: 100px;
+    }
+    .imagev img{
+      object-fit: contain;
+      padding: 10px;
+      padding-left: 15px;
+
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.1));
+  transition: 400ms;
     }
      .pdf{
       display: flex;
@@ -167,6 +219,15 @@ import Footer from "@components/Footer.astro"
     .pdf img{
       object-fit: contain;
       padding: 10px;
+padding-left: 15px;
       max-width:450px;
+      margin-left:60px;
+      
+  filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
+  transition: 400ms;
     }
+
+    .pdf img:hover{
+  filter: brightness(0.7)
+}
   </style>
