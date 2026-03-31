@@ -7,19 +7,102 @@
    <!-- <a href="/">Home</a> -->
     </div> 
     
-    <div class="right">
-<p>
-<a href="ui-ux">UI/UX Design</a> 󠁯•󠁏󠁏 
-<a href="graphic-design">Graphic Design</a> 󠁯•󠁏󠁏
+    <nav>
+<ul id="sidebar" class="sidebar">
+    <li>
+  <button type="button" id="closeSidebar">
+          <p>✕</p>
+        </button></li>
+<li><a href="ui-ux">UI/UX Design</a></li> 󠁯
+<li><a href="graphic-design">Graphic Design</a></li> 󠁯
 <!-- <a href="the-chet-show">"The Chet Show" Thesis Site</a> 󠁯•󠁏󠁏  -->
-<a href="about"> About/Contact</a>
-</p> 
-    </div>
+<li><a href="about"> About/Contact</a></li>
+</ul> 
+
+<ul class="navbar">
+<li><a href="ui-ux">UI/UX Design</a></li> 󠁯•
+<li><a href="graphic-design">Graphic Design</a></li> 󠁯•󠁏󠁏
+<!-- <a href="the-chet-show">"The Chet Show" Thesis Site</a> 󠁯•󠁏󠁏  -->
+<li><a href="about"> About/Contact</a></li>
+<li>
+  <button type="button" id="menuToggle">
+          <p>☰</p>
+        </button></li></ul> 
+</nav>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('sidebar')
+    const toggle = document.getElementById('menuToggle')
+    if (!sidebar || !toggle) return
 
+    toggle.addEventListener('click', () => {
+      sidebar.classList.add('open')
+    })
+  })
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('sidebar')
+    const toggle = document.getElementById('menuToggle')
+    const closeBtn = document.getElementById('closeSidebar')
+    if (!sidebar || !toggle || !closeBtn) return
+
+    toggle.addEventListener('click', () => {
+      sidebar.classList.add('open')
+    })
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('open')
+    })
+  })
+</script>
 
 <style>
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    color: red;
+}
+
+button p{
+    font-size: 30px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+     .sidebar{
+        position: fixed;
+        top:0;
+        right:0;
+        height:100%;
+        width:250px;
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        box-shadow:-10px 0 10px rgba(0,0,0, 0.1);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+    }
+
+    .sidebar.open{
+        display: flex;
+    }
+    
+    .sidebar li{
+        width: 100%;  
+    }
+    .sidebar a{
+
+    }
 
 .left a:hover{
     color: rgb(255, 164, 164);
@@ -42,17 +125,17 @@
     transform: rotate(2deg);
 }
 
-.header p{
-    font-size: 20px;
-}
 .header a{
     font-weight: 650;
     color: black;
     text-decoration: none;
     font-style: bold;
 }
-
-.right a:hover{
+.navbar{
+    display: flex;
+    align-items: center;
+}
+.navbar a:hover{
     color: red;
 }
 
@@ -69,15 +152,25 @@
     
 }
 
-} 
+ 
     .left{
         display: flex;
         justify-content: flex-start;
     }
 
-    .right{
+    .navbar ul{
         display: flex;
-        justify-content: flex-end;
     }
-    
+    .navbar a{
+        height: 100%;
+        padding: 0 8px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar li:first-child{
+        margin-right: auto;
+    }
+
 </style>
