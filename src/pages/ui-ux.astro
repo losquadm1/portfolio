@@ -102,7 +102,8 @@ Chami is an online messenger app concept created for the 2022 Visual Language co
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-padding-top:20px
+padding-top:20px;
+justify-content: center;
 }
 
 .content1 img{
@@ -113,7 +114,8 @@ margin-top:-15px
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-padding-top:20px
+padding-top:20px;
+justify-content: center;
 }
 
 .content2 img{
@@ -121,14 +123,14 @@ margin-top:-10px
 }
 
 .image{
-  width:600px;
+  max-width:600px;
 filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
 padding-left:30px;
 padding-right:30px; 
 }
 
 .text{
-  width:600px;
+  max-width:600px;
 padding-left:30px;
 padding-right:30px; 
 }
@@ -136,5 +138,10 @@ padding-right:30px;
 .image img:hover{
   filter: brightness(0.7)
 }
-
+@media (max-width: 768px){
+.image{
+  padding-left:10px;
+  padding-right:10px;
+}
+}
   </style>

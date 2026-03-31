@@ -17,14 +17,16 @@ import Footer from "@components/Footer.astro"
     <h1>About</h1>
     <img src="img/aboutpicture.webp" alt="Portrait of Michael, he is being surprised by Chet the puppet."/>
     
-    <div class= bodytext>
+    <div class="bodytext">
     <p> &#9; Michael Losquadro is a multi-media designer who grew his fundamental skills at SUNY New Paltz through the graphic design program as well as the film and video studies program. He currently specializes in web design with knowledge of web accessibility. He hopes to continue building on UI/UX skills. </p>
     </div>
 
+    <div class="contact">
     <h2>Contact</h2>
     <p>Email: mlosquadronp@gmail.com<br>
       LinkedIn: <a href="https://www.linkedin.com/in/michael-losquadro-32444b365/">Michael Losquadro</a> <br>
       Launch Page: <a href="https://michaellosquadrolaunch.netlify.app">michaellosquadrolaunch.netlify.app</a></p>
+      </div>
 
 </div>
 
@@ -34,11 +36,21 @@ import Footer from "@components/Footer.astro"
   </Layout>
 
   <style>
+    .contact{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top:30px;
+      padding-bottom: 20px;
+    }
     .bodytext{ 
       text-indent: 40px;
       display: flex;
       justify-content: center;
-      width:40vw
+      max-width:800px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
     .about{
         display: flex;
@@ -47,7 +59,11 @@ import Footer from "@components/Footer.astro"
     }
 
     .about img{
-        max-width: 30vw;
+        max-width: 600px;
 }
+    @media (max-width: 600px){
+      .about img{
+        max-width: 95vw;
+      }
     }
   </style>

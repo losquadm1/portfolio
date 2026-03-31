@@ -209,7 +209,6 @@ A series of comission pieces from Landline Presents, a local house show venue wh
       padding-left: 15px;
 
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.1));
-  transition: 400ms;
     }
      .pdf{
       display: flex;
@@ -230,4 +229,28 @@ padding-left: 15px;
     .pdf img:hover{
   filter: brightness(0.7)
 }
+
+@media (max-width: 1190px){
+  .group1, .group{
+    flex-direction: column;
+    width: 95vw;
+    align-items: center;
+  }
+  .text, .image, .imagev, .pdf, .pdf img{
+    width: 100%;
+    margin-left:0px;
+  }
+  .pdf, .pdf img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  img{
+    max-width:600px
+  }
+}
+@media (max-width: 768px){
+  img{
+  max-width:100%;
+}}
   </style>

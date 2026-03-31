@@ -62,6 +62,8 @@ max-width: 370px
 max-width:500px;
 margin-top: -30px;
 filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
+      padding-left: 5px;
+      padding-right: 5px;
 }
 
 .favorites{
@@ -81,7 +83,6 @@ filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
 .item img{
   max-width:350px;
   filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
-  transition: 400ms;
 }
 
 .hero{
@@ -95,5 +96,10 @@ filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
 
 .item img:hover{
   filter: brightness(0.7)
+}
+@media (max-width: 350px){
+  .img img, .item img{
+    max-width: 95vw;
+  }
 }
 </style>
