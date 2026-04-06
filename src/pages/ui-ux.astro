@@ -7,6 +7,10 @@ import { Content as SampleMarkdown } from "@content/sample-markdown.md";
 import { Image } from "astro:assets";
 import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
+import launchPageImage from "@assets/img/launchweb.webp"
+import uupwebImage from "@assets/img/uupweb.webp"
+import hotwwebImage from "@assets/img/hotwweb.webp"
+import chamiwebImage from "@assets/img/chamiweb.webp"
 ---
 
 <Layout title="Astro Starter">
@@ -22,7 +26,8 @@ import Footer from "@components/Footer.astro"
  <a href="https://michaellosquadrolaunch.netlify.app/">
  
   <div class="image">
-<img src="img/launchweb.webp" alt="">
+  <Image src={launchPageImage} alt="" width={1080}/>
+
   </div>
 
   <div class="text">
@@ -38,8 +43,8 @@ Built for SUNY New Paltz’s Fall 2024 Web Design 2 course, this launch page was
 <div class="content2">
 <a href="https://uuphost.org/newpaltzwp">
   <div class="image">
-<img src="img/uupweb.webp" alt="">
-  </div>
+<Image src={uupwebImage}alt="" width={1080}/>
+  </div> 
   <div class="text">
 <h2>New Paltz UUP Website</h2>
   </a>
@@ -53,7 +58,7 @@ Some of my favorite aspects I built into the new site was implementing mail chim
   <div class="content2">
  <a href="https://losquadm1.github.io/historyofweb/">
   <div class="image">
-<img src="img/hotwweb.webp" alt="">
+<Image src={hotwwebImage} alt="" width={1080}/>
   </div>
   <div class="text">
 <h2>History of the Web</h2>
@@ -68,7 +73,7 @@ Disclaimer: This website was primarily programmed for phones, if viewing on a we
 <div class="content1">
  <a href="chami">
   <div class="image">
-<img src="img/chamiweb.webp" alt="">
+<Image src={chamiwebImage} alt="" width={1080}/>
   </div>
   <div class="text">
 <h2>Chami</h2>
