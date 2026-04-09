@@ -22,13 +22,20 @@ import Footer from "@components/Footer.astro"
     </div>
 
     <div class="contact">
-    <h2>Contact</h2>
-    <p><img src="/img/envelope-solid-full.svg" alt="LinkedIn" width="30px"> mlosquadronp@gmail.com<br>
-      <img src="/img/linkedin-brands-solid-full.svg" alt="LinkedIn" width="30px"> <a href="https://www.linkedin.com/in/michael-losquadro-32444b365/">Michael Losquadro</a> <br>
-      <br><div class="launch-page">
-        <a href="https://michaellosquadrolaunch.netlify.app"><p>Michael Losquadro Launch Page<p/> <img src="/img/launchpageweb.webp" alt="Launch Page" width="350px"/></a>
-      </div></div>
 
+    <h2>Contact</h2>
+
+    <div class="contactinfo">
+    <img src="/img/envelope-solid-full.svg" alt="Email" width="30px"> <p>mlosquadronp@gmail.com</p>
+    </div>
+
+      <div class="contactinfo">
+    <a href="https://www.linkedin.com/in/michael-losquadro-32444b365/"><img src="/img/linkedin-brands-solid-full.svg" alt="LinkedIn" width="30px"><p>Michael Losquadro</p></a>
+    </div>
+
+      <div class="launch-page">
+        <a href="https://michaellosquadrolaunch.netlify.app"><p>Michael Losquadro Launch Page<p/> <img src="/img/launchpageweb.webp" alt="Launch Page" width="350px"/></a>
+      </div></div></div>
 </div>
 
   <Footer/>
@@ -61,6 +68,16 @@ import Footer from "@components/Footer.astro"
       flex-wrap: wrap;
       padding-top:30px;
       padding-bottom: 20px;
+    }
+    .contactinfo{
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 15px;
+    }
+
+    .contactinfo a{
+      display: flex;
+      align-items: flex-end;
     }
     .bodytext{ 
       text-indent: 40px;
