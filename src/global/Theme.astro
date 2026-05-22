@@ -10,7 +10,7 @@ import "@fontsource/karla";
   @import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
   :root {
-    --color-background: #F1F1E0;
+    --color-background: #d1d1b1;
     --color-text: black;
     --color-accent: rgb(255, 0, 0);
     --color-focus-ring: rgb(255, 0, 0);
@@ -27,7 +27,14 @@ import "@fontsource/karla";
 
   /* We can also apply these colors as a default */
   body {
-    background-image: url("/img/Whitewall.png");
+    background-image: linear-gradient(
+        rgba(235, 235, 209, 0.5),
+        rgba(235, 235, 209, 0.5)
+      ),
+      url("/img/Whitewall.png");
+    background-size: auto, 1024px auto;
+    background-position: top left;
+    background-repeat: repeat;
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: var(--font-body);

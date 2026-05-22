@@ -3,39 +3,31 @@
 ---
 <div class="header">
     <div class="left">
-        <a href="/"> <img src="/img/michael Sticky Note 1.png" alt=""/> <p class="hideOnMobile">Home</p></a>
-   <!-- <a href="/">Home</a> -->
-    </div> 
-    
-    <nav>
-<ul id="sidebar" class="sidebar">
-    <div class="x">
-  <button type="button" id="closeSidebar">
-          <p>✕</p>
-        </button>
+        <a href="/"><img src="/img/nav/home.webp" alt="" /></a>
     </div>
-<li><a href="/">Home</a></li> 󠁯
-<li><a href="/ui-ux">UI/UX Design</a></li> 󠁯
-<li><a href="/graphic-design">Graphic Design</a></li> 󠁯
-<!-- <a href="the-chet-show">"The Chet Show" Thesis Site</a> 󠁯•󠁏󠁏  -->
-<li><a href="/about"> About/Contact</a></li>
-</ul> 
 
-<ul class="navbar">
-    <div class="hideOnMobile">
-<li><a href="/ui-ux">UI/UX Design</a></li> 󠁯•
-<li><a href="/graphic-design">Graphic Design</a></li> 󠁯•󠁏󠁏
-<!-- <a href="/the-chet-show">"The Chet Show" Thesis Site</a> 󠁯•󠁏󠁏  -->
-<li><a href="/about"> About/Contact</a></li>
+    <nav aria-label="Primary">
+        <ul class="navbar">
+            <li class="hideOnMobile"><a href="/ui-ux">UI/UX Design</a></li>
+            <li class="separator hideOnMobile" aria-hidden="true">•</li>
+            <li class="hideOnMobile"><a href="/graphic-design">Graphic Design</a></li>
+            <li class="separator hideOnMobile" aria-hidden="true">•</li>
+            <li class="hideOnMobile"><a href="/about">About/Contact</a></li>
+            <li class="hideOnDesktop">
+                <button type="button" id="menuToggle" aria-label="Open menu">
+                    <p>☰</p>
+                </button>
+            </li>
+        </ul>
+
+        
+    </nav>
+    <div class="navimg" aria-hidden="true">
+        <img class="paperrip" src="/img/nav/paperrip.webp" alt="" loading="eager" fetchpriority="high"/>
     </div>
-<li>
-    <div class="hideOnDesktop">
-  <button type="button" id="menuToggle">
-          <p>☰</p>
-        </button></li></ul> 
-        </div>
-</nav>
 </div>
+
+<div class="space"><br></div>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -66,6 +58,19 @@
 
 <style>
 
+.left, .navbar{
+    margin-top: 0px;
+}
+
+.space{
+    height: 20px;
+}
+@media (min-width: 2000px) {
+    .space{
+        height: 40px;
+    }
+}
+
 .x{
     display: flex;
     justify-content: flex-end;
@@ -85,6 +90,7 @@ button:hover{
 
 button p{
     font-size: 30px;
+    margin: 0;
 }
 
 ul {
@@ -127,7 +133,8 @@ ul {
     color: rgb(255, 164, 164);
 }
 .left a img{
-    padding-top: 15px;
+    padding-top: 0;
+    display: block;
 }
 .left a{
     display: flex;
@@ -140,8 +147,13 @@ ul {
 }
 
 .left img{
-    max-width: 75px;
-    transform: rotate(2deg);
+    max-width: 40px;
+    transform: rotate(-4deg);
+filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.2));
+}
+
+.left img:hover{
+  filter: brightness(0.7)
 }
 
 .header a{
@@ -153,21 +165,63 @@ ul {
 .navbar{
     display: flex;
     align-items: center;
+    list-style-type: none;
+    margin: -10px 0 0 0;
+    padding: 0;
 }
+
+.separator{
+    padding: 0 4px;
+}
+
 .navbar a:hover{
     color: red;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.navimg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.paperrip {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    transform: translateY(60px);
+
+}
+
+@media (min-width: 2000px) {
+    .paperrip {
+        transform: translateY(100px);
+    }
+}
+
     .header{
         display: flex;
-        width: 98vw;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
         justify-content: space-between; 
         align-items: center;
+        background-color: #ffffff;
 
-    padding-top:0px;
+    padding-top:15px;
     padding-left:35px;
     padding-right:35px;
-    padding-bottom:10px;
+    padding-bottom: 15px;
     
 }
 
@@ -175,11 +229,10 @@ ul {
     .left{
         display: flex;
         justify-content: flex-start;
+        position: relative;
+        z-index: 2;
     }
 
-    .navbar ul{
-        display: flex;
-    }
     .navbar a{
         height: 100%;
         padding: 0 8px;
@@ -188,41 +241,15 @@ ul {
         align-items: center;
     }
 
-    .navbar li:first-child{
-        margin-right: auto;
-    }
-
     .hideOnDesktop{
             display: none;
         }
 
     @media (max-width: 768px) {
 
-        .left{
-        display: flex;
-        flex-direction: column;
+        .header, .navimg, .space{
+        display: none;
         }
-
-        .hideOnMobile{
-            display: none;
-        }
-        .hideOnDesktop{
-            display: flex;
-        }
-
-        .header{
-    padding-top:0px;
-    padding-left:15px;
-    padding-right:15px;
-    padding-bottom:0px;   
-
 }
-    }
-
-    @media (max-width: 400px) {
-        .sidebar{
-            width:100%
-        }
-    }
 
 </style>

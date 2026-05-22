@@ -1,0 +1,242 @@
+---
+
+---
+<div class="header">
+        <nav aria-label="Mobile navigation">
+                <ul id="mobileSidebar" class="sidebar">
+                        <div class="x">
+                        <button type="button" id="mobileCloseSidebar" aria-label="Close menu">
+                                        <img src="/img/nav/x.webp" alt="close navigation menu" />
+                                </button>
+                        </div>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/ui-ux">UI/UX Design</a></li>
+                        <li><a href="/graphic-design">Graphic Design</a></li>
+                        <li><a href="/about">About/Contact</a></li>
+                </ul>
+
+                <div class="hideOnDesktop">
+                    <button type="button" id="mobileMenuToggle" aria-label="Open menu">
+                                <img src="/img/nav/pancake.webp" alt="open navigation menu" />
+                        </button>
+                </div>
+        </nav>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebar = document.getElementById('mobileSidebar')
+        const toggle = document.getElementById('mobileMenuToggle')
+        const closeBtn = document.getElementById('mobileCloseSidebar')
+        if (!sidebar || !toggle || !closeBtn) return
+
+        toggle.addEventListener('click', () => {
+            sidebar.classList.add('open')
+        })
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('open')
+        })
+    })
+</script>
+
+<style>
+
+
+.x{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 22px;
+    padding-bottom: 10px;
+}
+.x img{
+    width: 30px;
+    margin-top: 5px;
+    margin-right: 2px;
+}
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    color: red;
+}
+
+button p{
+    font-size: 30px;
+    margin: 0;
+}
+
+#mobileMenuToggle img{
+    display: block;
+    width: 40px;
+    height: auto;
+    transform: rotate(3deg);
+    margin-top: 20px;
+    filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.15));
+}
+
+#mobileMenuToggle img:hover{
+  filter: brightness(0.7)
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+.hideOnMobile{
+    display: flex;
+}
+
+     .sidebar{
+        position: fixed;
+        z-index: 999;
+        top:0;
+        right:0;
+        height:100%;
+        width:100%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/img/nav/crumpled.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow:-10px 0 10px rgba(0,0,0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 260ms ease, opacity 260ms ease;
+        
+    }
+
+    .sidebar.open{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    
+    .sidebar li{
+        width: 100%;  
+    }
+
+    .sidebar li + li{
+        margin-top: 20px;
+    }
+    .sidebar a{
+
+    }
+
+.left a:hover{
+    color: rgb(255, 164, 164);
+}
+.left a img{
+    padding-top: 15px;
+}
+.left a{
+    display: flex;
+    align-items: center
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+}
+
+.left img{
+    max-width: 75px;
+    transform: rotate(2deg);
+}
+
+.header a{
+    font-weight: 650;
+    color: black;
+    text-decoration: none;
+    font-style: bold;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+}
+.navbar a:hover{
+    color: red;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+    .header{
+        display: flex;
+        position: sticky;
+        top: 0;
+        z-index: 998;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: flex-end;
+        align-items: center;
+        background: transparent;
+
+    padding-top:0px;
+    padding-right:15px;
+    margin-bottom:-5px;
+    
+}
+
+ 
+    .left{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .navbar ul{
+        display: flex;
+    }
+    .navbar a{
+        height: 100%;
+        padding: 0 8px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar li:first-child{
+        margin-right: auto;
+    }
+
+    .hideOnDesktop{
+            display: none;
+        }
+
+    @media (max-width: 768px) {
+
+        .left{
+        display: flex;
+        flex-direction: column;
+        }
+
+        .hideOnMobile{
+            display: none;
+        }
+        .hideOnDesktop{
+            display: flex;
+            margin-left: auto;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .sidebar{
+            width:100%
+        }
+    }
+
+</style>

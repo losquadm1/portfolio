@@ -6,6 +6,7 @@ import AstroLogo from "@assets/images/astro-logo-light-gradient.png";
 import { Content as SampleMarkdown } from "@content/sample-markdown.md";
 import { Image } from "astro:assets";
 import Header from "@components/Header.astro"
+import HeaderMobile from "@components/HeaderMobile.astro"
 import Footer from "@components/Footer.astro"
 ---
 
@@ -13,10 +14,11 @@ import Footer from "@components/Footer.astro"
   <Container>
 
   <Header/>
+  <HeaderMobile/>
  <div class="hero">
    <h1>Michael Losquadro</h1>
   <div class="img">
-    <img src="/img/michael Sticky Note 1.png" alt="Sticky Note Drawing of Michael" />
+    <img src="/img/sticker logo.webp" alt="Sticky Note Drawing of Michael" />
   </div>
   </div>
 
@@ -55,7 +57,16 @@ import Footer from "@components/Footer.astro"
 <style>
 .img{
 display: inline;
-max-width: 370px
+max-width: 400px;
+padding-top: 10px !important;
+padding: 25px;
+}
+
+.img img{
+  transform: rotate(-2deg);
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.15));
+padding: 10px;
+background-color: white;
 }
 
 .imgds{
