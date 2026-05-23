@@ -705,21 +705,6 @@ padding-left: 15px;
     event.stopPropagation();
   });
 
-  lightbox?.addEventListener("click", (event) => {
-    const target = event.target as HTMLElement | null;
-    if (!target) {
-      return;
-    }
-
-    const clickedInteractive = target.closest(
-      ".lightbox-image, .lightbox-info, .lightbox-nav, .lightbox-close"
-    );
-
-    if (!clickedInteractive) {
-      closeLightbox();
-    }
-  });
-
   document.addEventListener("keydown", (event) => {
     if (!lightbox?.classList.contains("open")) {
       return;
