@@ -8,6 +8,7 @@ import { Image } from "astro:assets";
 import Header from "@components/Header.astro"
 import HeaderMobile from "@components/HeaderMobile.astro"
 import Footer from "@components/Footer.astro"
+import SmallPin from "@components/smallpin.astro"
 ---
 
 <Layout title="Astro Starter">
@@ -17,10 +18,13 @@ import Footer from "@components/Footer.astro"
 
   <div class="about">
     <h1>About</h1>
-    <img src="/img/aboutpicture.webp" alt="Portrait of Michael, he is being surprised by Chet the puppet."/>
+    <div class="about-photo-frame">
+      <img class="about-tape" src="/img/reusable/tape.webp" alt="" />
+      <img class="about-photo" src="/img/aboutpicture.webp" alt="Portrait of Michael, he is being surprised by Chet the puppet."/>
+    </div>
     
     <div class="bodytext">
-    <p> &#9; Michael Losquadro is a multi-media designer who grew his fundamental skills at SUNY New Paltz through the graphic design program as well as the film and video studies program. He currently specializes in web design with knowledge of web accessibility. He hopes to continue building on UI/UX skills. </p>
+    <p> &#9; Michael Losquadro is a multi-media designer who grew his fundamental skills at SUNY New Paltz through the graphic design program as well as the film and video studies program. He currently specializes in web design with knowledge of web accessibility. He hopes to continue building on his web design and development skills. </p>
     </div>
 
     <div class="contact">
@@ -35,9 +39,7 @@ import Footer from "@components/Footer.astro"
     <a href="https://www.linkedin.com/in/michael-losquadro-32444b365/"><img src="/img/linkedin-brands-solid-full.svg" alt="LinkedIn" width="30px"><p>Michael Losquadro</p></a>
     </div>
 
-      <div class="launch-page">
-        <a href="https://launch.michaellosquadro.com"><p>Michael Losquadro Launch Page</p> <img src="/img/launchpageweb.webp" alt="Launch Page" width="350px"/></a>
-      </div></div></div>
+      <SmallPin pic="/img/pin/launch-small.webp" title="Michael Losquadro Launch Page" link="https://launch.michaellosquadro.com"/></div></div>
 </div>
 
   <Footer/>
@@ -46,17 +48,15 @@ import Footer from "@components/Footer.astro"
   </Layout>
 
   <style>
+   .about h1{
+    padding-bottom: 15px;
+   }
     .launch-page{
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    .launch-page img{
-      filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
-}
-    .launch-page img:hover{
-  filter: brightness(0.7)
-}
+ 
     .launch-page a{
       display: flex;
       flex-direction: column;
@@ -95,12 +95,37 @@ import Footer from "@components/Footer.astro"
         align-items: center;
     }
 
-    .about img{
-        max-width: 600px;
-}
+    .about-photo-frame{
+      position: relative;
+      width: min(400px, 95vw);
+      margin-bottom: 20px;
+    }
+
+    .about-photo{
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
+    }
+
+    .about-tape{
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-20deg);
+      height: 50px;
+      width: 125px;
+      z-index: 2;
+    }
+
     @media (max-width: 600px){
-      .about img{
-        max-width: 95vw;
+      .about-photo-frame{
+        width: 95vw;
+      }
+
+      .about-tape{
+        height: 40px;
+        top: -13px;
       }
     }
   </style>
