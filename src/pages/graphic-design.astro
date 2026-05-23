@@ -94,10 +94,11 @@ import Footer from "@components/Footer.astro"
   <h2>Design Manifesto</h2>
   <p class="year">(2024)</p>
   <p>My Design Manifesto was my final project for my Design Theory and Criticism class. This project went over how I felt at the time moving from creative endevors to more comission based design work. And while now I have more outlets to express that original creative work, this piece still shows how mindsets need to adapt from project to project.</p>
+  <p class="project-link"><a href="/img/manifesto.pdf" target="_blank" rel="noopener noreferrer">Design Manifesto PDF</a></p>
     </div>
 
     <div class="pdf">
-  <a href="/img/manifesto.pdf"><img src="/img/manifesto.webp" alt="Design Manifesto project"></a>
+  <img src="/img/manifesto.webp" data-pdf-link="/img/manifesto.pdf" alt="Design Manifesto project">
     </div>
 
   </div>
@@ -107,11 +108,12 @@ import Footer from "@components/Footer.astro"
   <h2>Alan Bell Research Magazine</h2>
   <p class="year">(2024)</p>
   <p>A variation of a project I did in my sophmore year Design Theory and Criticism class. For the project we had to make the paper in a more minimalist style, but on the side I wanted to make this version that was heavily inspired by Bell's work in the design field. Focusing on his formatting and image placements in BLK magazine.</p>
+  <p class="project-link"><a href="/img/Alan Bell project.pdf" target="_blank" rel="noopener noreferrer">Alan Bell Research Magazine PDF</a></p>
     </div>
 
 
     <div class="pdf">
-  <a href="/img/Alan Bell project.pdf"><img src="/img/Alan Bell.webp" alt="Alan Bell resarch project article"></a>
+  <img src="/img/Alan Bell.webp" data-pdf-link="/img/Alan Bell project.pdf" alt="Alan Bell resarch project article">
     </div>
 </div>
 
@@ -122,10 +124,11 @@ import Footer from "@components/Footer.astro"
   <p class="year">(2024)</p>
   <p>While this project feels simple compared to my more recent work, This was certainly the project that helped me grasp magazine formatting in ways I hadn't in the past.<br><br>
   Sometime in the near future I would love to fix up the font scaling on this project and bring in some more legability to the final product.</p>
+  <p class="project-link"><a href="/img/TheEconomical.pdf" target="_blank" rel="noopener noreferrer">The Economical PDF</a></p>
     </div>
 
     <div class="pdf">
-  <a href="/img/TheEconomical.pdf"><img src="/img/TheEconomical.webp" alt="The Economical Article"></a>
+  <img src="/img/TheEconomical.webp" data-pdf-link="/img/TheEconomical.pdf" alt="The Economical Article">
       </div>
 </div>
 
@@ -218,12 +221,26 @@ import Footer from "@components/Footer.astro"
     }
     .text .year{
       margin-top: 0;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       font-weight: 400;
       font-size: 0.92em;
     }
     .text p{
       margin-top: 0;
+    }
+
+    .project-link{
+      padding-top: 10px;
+      margin-top: 18px;
+      margin-bottom: 0;
+      font-size: 0.92em;
+      font-style: italic;
+    }
+
+    .project-link a{
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
     .image{
       display: flex;
@@ -236,7 +253,7 @@ import Footer from "@components/Footer.astro"
       padding: 10px;
       padding-left: 15px;
       cursor: zoom-in;
-
+      transition: filter 280ms ease;
     }
       .imagev{
       display: flex;
@@ -250,13 +267,14 @@ import Footer from "@components/Footer.astro"
       padding: 10px;
       padding-left: 15px;
       cursor: zoom-in;
+      transition: filter 280ms ease;
 
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.1));
     }
      .pdf{
       display: flex;
       flex-wrap: wrap;
-      width:400px;
+      width: 600px;
       justify-content: center;
     }
     .pdf img{
@@ -264,21 +282,27 @@ import Footer from "@components/Footer.astro"
       padding: 10px;
 padding-left: 15px;
       max-width:450px;
-      margin-left:60px;
-      cursor: default;
+      margin-left: 0;
+      cursor: zoom-in;
       
   filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
-  transition: 400ms;
+  transition: filter 280ms ease;
     }
 
-    .pdf a:hover img,
-    .pdf a:focus img {
-      cursor: pointer;
+    .image img:hover,
+    .image img:focus-visible{
+      filter: brightness(0.7);
     }
 
-    .pdf img:hover{
-  filter: brightness(0.7)
-}
+    .imagev img:hover,
+    .imagev img:focus-visible{
+      filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.1)) brightness(0.7);
+    }
+
+    .pdf img:hover,
+    .pdf img:focus-visible{
+      filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15)) brightness(0.7);
+    }
 
     .lightbox{
       position: fixed;
@@ -363,6 +387,12 @@ padding-left: 15px;
       width: 30px;
       height: auto;
       display: block;
+      transition: opacity 180ms ease;
+    }
+
+    .lightbox-close:hover img,
+    .lightbox-close:focus-visible img{
+      opacity: 0.55;
     }
 
     .lightbox-nav{
@@ -385,6 +415,12 @@ padding-left: 15px;
       display: block;
       margin: 0 auto;
       transform: rotate(5deg);
+      transition: opacity 180ms ease;
+    }
+
+    .lightbox-nav:hover img,
+    .lightbox-nav:focus-visible img{
+      opacity: 0.55;
     }
 
     .lightbox-prev img{
@@ -561,6 +597,7 @@ padding-left: 15px;
     const title = project?.querySelector(".text h2")?.textContent?.trim() ?? "";
     const year = project?.querySelector(".text .year")?.textContent?.trim() ?? "";
     const description = project?.querySelector(".text p:not(.year)")?.textContent?.trim() ?? "";
+    const linkInDescription = project?.querySelector(".project-link a")?.getAttribute("href") ?? "";
 
     return {
       src: img.getAttribute("src") ?? "",
@@ -568,7 +605,7 @@ padding-left: 15px;
       title,
       year,
       description,
-      link: img.closest("a")?.getAttribute("href") ?? "",
+      link: img.getAttribute("data-pdf-link") ?? img.closest("a")?.getAttribute("href") ?? linkInDescription,
       itemIndex: project ? (itemIndexByElement.get(project) ?? 0) : 0,
     };
   });
