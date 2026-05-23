@@ -1,9 +1,9 @@
 ---
-const {pic, title, link} = Astro.props;
+const {pic, title, link, id, compact = false} = Astro.props;
 const rotation = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
 ---
 
-<a class="smallpin" href={link} style={`--smallpin-rotation: ${rotation};`}>
+<a class:list={["smallpin", compact && "smallpin--compact"]} id={id} href={link} style={`--smallpin-rotation: ${rotation};`}>
   <div class="smallpin-card">
     <div class="pin">
       <img src="/img/pin/pin.webp" alt="" />
@@ -102,19 +102,37 @@ const rotation = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
     text-wrap: balance;
   }
 
+  .smallpin--compact {
+    width: 210px;
+    height: 280px;
+    aspect-ratio: auto;
+    padding: 12px;
+  }
+
+  .smallpin--compact .pin {
+    width: 24px;
+  }
+
+  .smallpin--compact p {
+    width: 80%;
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+
   @media (max-width: 640px) {
     .smallpin {
-      width: 300px;
-      padding: 16px;
+      width: 210px;
+      height: 280px;
+      aspect-ratio: auto;
+      padding: 12px;
     }
 
     .pin {
-      width: 30px;
+      width: 24px;
     }
 
     p {
       width: 80%;
-      font-size: clamp(1.2rem, 4.8vw, 1.5rem);
+      font-size: clamp(1rem, 4vw, 1.25rem);
     }
   }
  

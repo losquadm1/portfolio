@@ -13,52 +13,88 @@ import SmallPin from "@components/smallpin.astro"
 
 <Layout title="Astro Starter">
   <Container>
-
   <Header/>
   <HeaderMobile/>
-  <div class="hero">
-    <div class="img">
-      <h1>
-        <img src="/img/sticker logo.webp" alt="Michael Losquadro" />
-        <span class="sticker-caption">portfolio page<span class="sticker-asterisk">*</span></span>
-      </h1>
+
+ 
+  <div class="intro-row">
+    <div class="hero">
+      <div class="img">
+        <h1>
+          <img src="/img/sticker logo.webp" alt="Michael Losquadro" />
+          <span class="sticker-caption">portfolio page<span class="sticker-asterisk">*</span></span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="imgds-frame">
+      <img class="tape" src="/img/reusable/tape.webp" alt="" />
+      <div class="imgds">
+        <img src="/img/reusable/rippedpaper.webp" alt="" />
+        <h2>Some Personal Favorites:</h2>
+      </div>
+    </div>
+    <div class="favorites">
+     <div class="pinone"> <SmallPin compact pic="/img/pin/chet-small.webp" title='"The Chet Show" Thesis Site' link="https://thechetshow.com/" /> </div>
+     <div class="pintwo"> <SmallPin compact pic="/img/pin/chami-small.webp" title='Chami' link="/ui-ux/chami" /> </div>
+     <div class="pinthree"> <SmallPin compact pic="/img/pin/uup-small.webp" title='UUP Website' link="/ui-ux/uup" /> </div>
     </div>
   </div>
-
-  <div class="imgds-frame">
-    <img class="tape" src="/img/reusable/tape.webp" alt="" />
-    <div class="imgds">
-      <img src="/img/reusable/rippedpaper.webp" alt="" />
-      <h2>Some Personal Favorites:</h2>
-    </div>
-  </div>
-
-  <div class="favorites">
-
-<SmallPin pic="/img/pin/chet-small.webp" title='"The Chet Show" Thesis Site' link="https://thechetshow.com/" />
-<SmallPin pic="/img/pin/chami-small.webp" title='Chami' link="/ui-ux/chami" />
-<SmallPin pic="/img/pin/uup-small.webp" title='UUP Website' link="/ui-ux/uup" />
-
-  </div>
-
-  <div class="favorites">
-
-</div>
+<Footer/>
   </Container>
 
-<Footer/>
+
 
 </Layout>
 
 <style>
+
+
+  :global(body){
+    overflow-x: hidden;
+  }
+  
+    .pinone{
+margin-left: -50px;
+margin-top: 80px
+}
+.pintwo{
+margin-left: -700px;
+margin-top: -200px
+}
+.pinthree{
+margin-left: -160px;
+margin-top: -100px
+}
+
+
+.intro-row{
+  padding-left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: clamp(12px, 2.5vw, 42px);
+  padding-top: 10px;
+  overflow-x: clip;
+}
+
+.intro-row > .hero,
+.intro-row > .imgds-frame{
+  flex: 0 0 auto;
+}
+
 .img{
 position: relative;
 display: inline-block;
 container-type: inline-size;
-width: 573px;
-padding-top: 35px !important;
+width: 630px;
+padding-top: 15px !important;
 padding: 25px;
 padding-bottom: 95px !important;
+margin-left: 0;
+transform: translateX(10px);
 }
 
 .img h1{
@@ -72,6 +108,7 @@ padding-bottom: 95px !important;
   transform: rotate(-2deg);
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.15));
   padding: 10px;
+  margin-top: 70px;
 background-color: white;
 }
 
@@ -103,6 +140,7 @@ margin-top: -30px;
 box-sizing: border-box;
   padding-left: 5px;
   padding-right: 5px;
+margin-left: -20px;
 }
 
 .imgds{
@@ -119,11 +157,13 @@ padding-bottom: 10px;
 
 .tape{
   position: absolute;
+
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  height: 42px;
-  width: auto;
+  width: 50%;
+  height: auto;
+  display: block;
   z-index: 3;
 }
 
@@ -140,40 +180,289 @@ padding-bottom: 10px;
 
 .favorites{
     display: grid;
-    grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr;
     align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  justify-content: start;
+  justify-items: center;
+  position: relative;
+  width: 200px;
+  min-height: 0;
+  margin-top: 10px;
+  left: 0;
+  gap: 8px;
     text-align: center;
+  overflow: visible;
   }
 
-@media (max-width: 1250px){
-  .favorites{
+.hero{
+  display: grid;
   grid-template-columns: auto;
-}}
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+}
+
+.favorites :global(.smallpin--compact){
+  width: 238px;
+  height: 318px;
+  padding: 14px;
+}
+
+.favorites :global(.smallpin--compact .pin){
+  width: 28px;
+}
+
+.favorites :global(.smallpin--compact p){
+  font-size: clamp(1.1rem, 4.4vw, 1.4rem);
+}
+
+.pinone,
+.pintwo,
+.pinthree{
+  position: relative;
+}
+
+.intro-row .imgds-frame{
+  width: 350px;
+  margin-top: 60px;
+  margin-right: 15px;
+  transform: rotate(-16deg);
+  transform-origin: center top;
+}
+
+@media (min-width: 1251px) and (max-width: 1439px){
+  .intro-row{
+    gap: clamp(12px, 2.5vw, 42px);
+    padding-top: 10px;
+  }
+
+  .img{
+    width: 630px;
+    padding-top: 15px !important;
+    padding-bottom: 95px !important;
+  }
+
+  .intro-row .imgds-frame{
+    width: 350px;
+    margin-top: 60px;
+    margin-right: 15px;
+  }
+
+  .favorites{
+    width: 200px;
+    gap: 8px;
+  }
+
+  .favorites :global(.smallpin--compact){
+    width: 238px;
+    height: 318px;
+    padding: 14px;
+  }
+
+  .favorites :global(.smallpin--compact .pin){
+    width: 28px;
+  }
+
+  .favorites :global(.smallpin--compact p){
+    font-size: clamp(1.1rem, 4.4vw, 1.4rem);
+  }
+
+  .pinone{
+    margin-left: -50px;
+    margin-top: 80px;
+  }
+
+  .pintwo{
+    margin-left: -700px;
+    margin-top: -200px;
+  }
+
+  .pinthree{
+    margin-left: -160px;
+    margin-top: -100px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2559px){
+  .intro-row{
+    gap: clamp(12px, 2.5vw, 42px);
+    padding-top: 10px;
+  }
+
+  .img{
+    width: 630px;
+    padding-top: 15px !important;
+    padding-bottom: 95px !important;
+  }
+
+  .intro-row .imgds-frame{
+    width: 350px;
+    margin-top: 60px;
+    margin-right: 15px;
+  }
+
+  .favorites{
+    width: 200px;
+    gap: 8px;
+  }
+
+  .favorites :global(.smallpin--compact){
+    width: 238px;
+    height: 318px;
+    padding: 14px;
+  }
+
+  .favorites :global(.smallpin--compact .pin){
+    width: 28px;
+  }
+
+  .favorites :global(.smallpin--compact p){
+    font-size: clamp(1.1rem, 4.4vw, 1.4rem);
+  }
+
+  .pinone{
+    margin-left: -50px;
+    margin-top: 80px;
+  }
+
+  .pintwo{
+    margin-left: -700px;
+    margin-top: -200px;
+  }
+
+  .pinthree{
+    margin-left: -160px;
+    margin-top: -100px;
+  }
+}
+
+@media (min-width: 2560px){
+  .intro-row{
+    gap: 72px;
+    padding-top: 40px;
+  }
+
+  .img{
+    width: 900px;
+    padding-top: 36px !important;
+    padding-bottom: 140px !important;
+  }
+
+  .intro-row .imgds-frame{
+    width: 520px;
+    margin-top: 94px;
+    margin-right: 28px;
+  }
+
+  .favorites{
+    width: 320px;
+    gap: 18px;
+  }
+
+  .favorites :global(.smallpin--compact){
+    width: 340px;
+    height: 452px;
+    padding: 20px;
+  }
+
+  .favorites :global(.smallpin--compact .pin){
+    width: 40px;
+  }
+
+  .favorites :global(.smallpin--compact p){
+    font-size: clamp(1.35rem, 1.15vw, 2rem);
+  }
+
+  .pinone{
+    margin-left: -95px;
+    margin-top: 130px;
+  }
+
+  .pintwo{
+    margin-left: -1020px;
+    margin-top: -292px;
+  }
+
+  .pinthree{
+    margin-left: -300px;
+    margin-top: -165px;
+  }
+}
+
+@media (max-width: 1250px){
+
+.img, .intro-row{
+  padding-top: 0px !important;
+  margin-top: -20px;
+}
+
+  .intro-row{
+    padding-top: 0px;
+    display: block;
+  }
+
+  .intro-row .imgds-frame{
+    width: min(400px, 75vw);
+    margin-top: -18px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    transform: none;
+    transform: rotate(0deg);
+  }
+
+  .favorites{
+    grid-template-columns: auto;
+    width: 100%;
+    min-height: 0;
+    left: 0;
+    justify-content: center;
+  }
+
+  .pinone,
+  .pintwo,
+  .pinthree{
+    position: static;
+    margin-top:0px;
+  }
+
+  .pinone{
+    margin-left: 80px;
+  }
+  .pintwo{
+    margin-left: 0px;
+  }
+  .pinthree{
+    margin-left: 75px;
+  }
+}
 
 .item img{
   max-width:350px;
   filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
 }
 
-.hero{
-    display: grid;
-    grid-template-columns: auto;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-    justify-items:center;
-  }
-
 .item img:hover{
   filter: brightness(0.7)
 }
 @media (max-width: 590px){
+
+  .imgds-frame{
+    width: min(414px, 94vw);
+    max-width: none;
+    margin-top: -18px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .img{
     width: 95vw;
+    padding-top:15px !important;
     padding: 16px;
     padding-bottom: 72px !important;
+    transform: none;
   }
 
   .sticker-caption{
@@ -188,6 +477,16 @@ padding-bottom: 10px;
 
   .img img, .item img{
     max-width: 95vw;
+  }
+
+  .favorites{
+    width: 100%;
+    gap: 5px;
+  }
+
+  .tape{
+    width: 50%;
+    height: auto;
   }
 }
 </style>
