@@ -8,6 +8,7 @@ import { Image } from "astro:assets";
 import Header from "@components/Header.astro"
 import HeaderMobile from "@components/HeaderMobile.astro"
 import Footer from "@components/Footer.astro"
+import SmallPin from "@components/smallpin.astro"
 ---
 
 <Layout title="Astro Starter">
@@ -28,25 +29,14 @@ import Footer from "@components/Footer.astro"
 
   <div class="favorites">
 
-<div class="item">
-<a href="https://losquadm1.github.io/historyofweb/">
-<h3>History of the Web</h3>
-<img src="/img/HistoryOfWeb.png" alt=""/>
-</a>
-</div>
+<SmallPin pic="/img/pin/chet-small.webp" title='"The Chet Show" Thesis Site' link="https://thechetshow.com/" />
+<SmallPin pic="/img/pin/chami-small.webp" title='Chami' link="/ui-ux/chami" />
+<SmallPin pic="/img/pin/uup-small.webp" title='UUP Website' link="/ui-ux/uup" />
 
-<div class="item">
-<a href="/ui-ux/chami">
-<h3>Chami</h3>
-<img src="/img/chami.png" alt=""/>
-</a>
-</div>
+  </div>
 
-<div class="item">
-<a href="https://www.uuphost.org/newpaltzwp/">
-<h3>UUP Website</h3>
-<img src="/img/UUP.png" alt=""/>
-</a>
+  <div class="favorites">
+
 </div>
   </Container>
 
