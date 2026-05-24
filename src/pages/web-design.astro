@@ -25,14 +25,14 @@ import LargePin from "@components/largepin.astro"
 </div>
 
 <div class="text">
-  <h2>"The Chet Show" Thesis Site</h2>
+  <h2><a href="/web-design/chet">"The Chet Show" Thesis Site</a></h2>
 
 <p class="year">(2026)</p>
 <p>
 Built for SUNY New Paltz’s 2026 Thesis.</p><p>
 
 “The Chet Show” was a rounchy college-comedy short film series that I had created alongside my good friend Candice Leach. The project was a very fun experience and had a very high production value.</p><p>For my thesis I decided to document this project through my knowledge of web design.  Specifically due to the large scope of the series and how the skills I utilized to manage it all were learnt more from my years of doing design work.</p><p>
-In the end <a href="https://thechetshow.com" >thechetshow.com</a> ended up being the largest website I had ever developed up until this point. Utilizing all the content and design skills I had built up until this point, I was able to create a website that acts as a truly memorable user experience.
+In the end <a href="https://thechetshow.com" >thechetshow.com</a> ended up being the largest website I had developed up until this point. Utilizing all the content and design skills I had built up until this point, I was able to create a website that acts as a truly memorable user experience.
 </p>
   </div>
 
@@ -43,7 +43,7 @@ In the end <a href="https://thechetshow.com" >thechetshow.com</a> ended up being
   <LargePin pic="/img/pin/uup-large.webp" alt="New Paltz UUP Website" link="/web-design/uup" />
   </div> 
   <div class="text">
-<h2>New Paltz UUP Website</h2>
+<h2><a href="/web-design/uup">New Paltz UUP Website</a></h2>
 <p class="year">(2025)</p>
 <p>
 Built for SUNY New Paltz’s Fall 2025 Client Design Course.</p><p>I was assigned as an Intern for the UUP’s New Paltz branch. In this role I was tasked to rebuild the New Paltz branch’s wordpress site.</p><p>
@@ -59,7 +59,7 @@ Some of my favorite aspects I built into the new site was implementing mail chim
 </div>
 
 <div class="text">
-  <h2>My Launch Page <span class="direct-link-note">(direct link)</span></h2>
+  <h2><a href="https://launch.michaellosquadro.com">My Launch Page <span class="direct-link-note">(direct link)</span></a></h2>
 
 <p class="year">(2025)</p>
 <p>
@@ -75,7 +75,7 @@ Built for SUNY New Paltz’s Fall 2025 Web Design 2 course. This launch page was
   <LargePin pic="/img/pin/hotw-large.webp" alt="History of the Web" link="/web-design/hotw" />
   </div>
   <div class="text">
-<h2>History of the Web</h2>
+<h2><a href="/web-design/hotw">History of the Web</a></h2>
 <p class="year">(2024)</p>
 <p>
 Built for SUNY New Paltz’s Spring 2024 Web Design 1 course.
@@ -89,7 +89,7 @@ History of the Web is a guided tour through the internet, hosted by everyone’s
   <LargePin pic="/img/pin/chami-large.webp" alt="Chami" link="/web-design/chami" />
   </div>
   <div class="text">
-<h2>Chami</h2>
+<h2><a href="/web-design/chami">Chami</a></h2>
 <p class="year">(2022)</p>
 
 <p>
@@ -140,6 +140,11 @@ justify-content: center;
   min-width: 0;
 }
 
+.project-row .image{
+  display: flex;
+  justify-content: center;
+}
+
 .text{
   max-width:600px;
 padding-left:30px;
@@ -149,6 +154,14 @@ padding-right:30px;
 .text h2{
   margin-bottom: 1px;
   line-height: 1.25;
+}
+
+.text h2 a{
+  color: black;
+  text-decoration-color: var(--color-accent);
+  border: 2px solid transparent;
+  border-radius: 2px;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
 
 .direct-link-note{
@@ -191,7 +204,29 @@ padding-right:30px;
     }
 }
 
+@media (min-width: 769px){
+  .text h2 a:hover,
+  .text h2 a:focus-visible{
+    border-color: transparent;
+    background: #FAF6B1;
+    color: #303030;
+    text-decoration: none;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .text h2 a:active,
+  .text h2 a:focus-visible:active{
+    filter: brightness(0.7);
+  }
+}
+
 @media (max-width: 768px){
+
+    .text h2 a:hover,
+    .text h2 a:focus-visible{
+      color: #303030;
+      text-decoration-color: currentColor;
+    }
 
    
 

@@ -13,8 +13,8 @@
   :root {
     --color-background: #d1d1b1;
     --color-text: black;
-    --color-accent: rgb(255, 0, 0);
-    --color-focus-ring: rgb(255, 0, 0);
+    --color-accent: #c32101;
+    --color-focus-ring: #c32101;
 
     --font-body: "Caladea", sans-serif;
     --font-headings: "Caladea", sans-serif;
@@ -69,13 +69,28 @@ h3{
   }
 
 a{
-  color: rgb(255, 0, 0);
+  color: var(--color-accent);
 }
 a:visited{
-  color: rgb(180, 0, 0)
+  color: var(--color-accent);
 }
-a:hover{
-  color: rgb(255, 164, 164)
+p a{
+  border: 2px solid transparent;
+  border-radius: 2px;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+p a:hover,
+p a:focus-visible{
+  border-color: transparent;
+  background: #FAF6B1;
+  color: #303030;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+p a:active,
+p a:focus-visible:active{
+  filter: brightness(0.7);
 }
 
   .external-leave-overlay{
@@ -200,8 +215,8 @@ h3{
 
     document.body.appendChild(overlay);
 
-    const stayButton = overlay.querySelector('[data-action="stay"]');
-    const okButton = overlay.querySelector('[data-action="ok"]');
+    const stayButton = overlay.querySelector<HTMLButtonElement>('[data-action="stay"]');
+    const okButton = overlay.querySelector<HTMLButtonElement>('[data-action="ok"]');
     let pendingHref = "";
     let pendingTarget = "";
 
