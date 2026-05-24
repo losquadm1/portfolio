@@ -1,5 +1,5 @@
 ---
-const {pic, link, id, compact = false} = Astro.props;
+const {pic, link, id, alt, compact = false} = Astro.props;
 const rotation = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
 ---
 
@@ -8,7 +8,7 @@ const rotation = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
     <div class="pin">
       <img src="/img/pin/pin.webp" alt="" />
     </div>
-    <img class="pin-image" src={pic} alt="" />
+    <img class="pin-image" src={pic} alt={alt} />
     <div class="paper">
       <img class="paper-image" src="/img/pin/largebg.webp" alt="" />
     </div>
@@ -122,22 +122,20 @@ const rotation = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
     font-size: clamp(1rem, 4vw, 1.25rem);
   }
 
-  @media (max-width: 640px) {
+  @media print {
+    .pin,
+    .paper,
+    .paper-image {
+      display: none !important;
+    }
+
     .smallpin {
-      width: 210px;
-      height: 280px;
-      aspect-ratio: auto;
-      padding: 12px;
-    }
-
-    .pin {
-      width: 24px;
-    }
-
-    p {
-      width: 80%;
-      font-size: clamp(1rem, 4vw, 1.25rem);
+      filter: none;
+      transform: none;
+      margin-top: 0;
+      padding: 0;
     }
   }
- 
+
+
 </style>

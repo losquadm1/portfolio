@@ -135,5 +135,20 @@ const rotation = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
       font-size: clamp(1rem, 4vw, 1.25rem);
     }
   }
+
+  @media print {
+    .pin,
+    .paper,
+    .paper-image {
+      display: none !important;
+    }
+
+    .smallpin {
+      filter: none;
+      transform: none;
+      margin-top: 0;
+      padding: 0;
+    }
+  }
  
 </style>

@@ -17,11 +17,11 @@ import LargePin from "@components/largepin.astro"
   <HeaderMobile/>
   <div class="page">
 
-<h1>UI/UX Design</h1>
+<h1>Web Design</h1>
 <div class="content1 project-row">
 
 <div class="image">
-  <LargePin pic="/img/pin/chet-large.webp" link="https://thechetshow.com" />
+  <LargePin pic="/img/pin/chet-large.webp" alt='"The Chet Show" Thesis Site' link="/web-design/chet" />
 </div>
 
 <div class="text">
@@ -31,20 +31,34 @@ import LargePin from "@components/largepin.astro"
 <p>
 Built for SUNY New Paltz’s 2026 Thesis <br><br> 
 
-“The Chet Show” was a rounchy college-comedy short film series that I had created alongside my goodfriend Candice Leach. The project was very fun and had a very high production value.<br><br>For my thesis I decided to document this project through my knowledge of web design simply due to the large scope of the series and how the skills I utilized to manage it all were learnt more from my years of doing design work. In the end <a href="https://thechetshow.com" >thechetshow.com</a> ended up being the largest website I had ever developed up until this point. Utilizing all the content and design skills I had built up until this point, I was able to create a website that acts as a truly memorable user experience.
+“The Chet Show” was a rounchy college-comedy short film series that I had created alongside my goodfriend Candice Leach. The project was a very fun experience and had a very high production value.<br><br>For my thesis I decided to document this project through my knowledge of web design.  Specifically due to the large scope of the series and how the skills I utilized to manage it all were learnt more from my years of doing design work. In the end <a href="https://thechetshow.com" >thechetshow.com</a> ended up being the largest website I had ever developed up until this point. Utilizing all the content and design skills I had built up until this point, I was able to create a website that acts as a truly memorable user experience.
 </p>
   </div>
 
 </div>
 
 <div class="content1 project-row">
+  <div class="image">
+  <LargePin pic="/img/pin/uup-large.webp" alt="New Paltz UUP Website" link="/web-design/uup" />
+  </div> 
+  <div class="text">
+<h2>New Paltz UUP Website</h2>
+<p class="year">(2025)</p>
+<p>
+Built for SUNY New Paltz’s Fall 2025 Client Design Course.<br><br> I was assigned as an Intern for the UUP’s New Paltz branch. In this role I was tasked to rebuild the New Paltz branch’s wordpress site.<br><br>
+By the end of the project I had completely rebuilt the website from the ground up, bringing it into the modern era of wordpress. as well as updating the site to be usable on mobile devices. <br><br>
+Some of my favorite aspects I built into the new site was implementing mail chimp implementation and improving the workflow from google calendar to the website, creating a more self-sufficient website that operates more freely with less direct involvement from moderators.
+</p>
+  </div> </div>
+
+<div class="content1 project-row">
 
 <div class="image">
-  <LargePin pic="/img/pin/launch-large.webp" link="https://launch.michaellosquadro.com" />
+  <LargePin pic="/img/pin/launch-large.webp" alt="A Direct Link to My Launch Page" link="https://launch.michaellosquadro.com" />
 </div>
 
 <div class="text">
-  <h2>My Launch Page</h2>
+  <h2>My Launch Page <span class="direct-link-note">(direct link)</span></h2>
 
 <p class="year">(2025)</p>
 <p>
@@ -54,23 +68,10 @@ Built for SUNY New Paltz’s Fall 2025 Web Design 2 course.<br><br> This launch 
 
 </div>
 
-<div class="content1 project-row">
-  <div class="image">
-  <LargePin pic="/img/pin/uup-large.webp" link="https://uuphost.org/newpaltzwp" />
-  </div> 
-  <div class="text">
-<h2>New Paltz UUP Website</h2>
-<p class="year">(2025)</p>
-<p>
-Created for SUNY New Paltz’s Fall 2025 Client Design Course.<br><br> I was assigned as an Intern for the UUP’s New Paltz branch. In this role I was tasked to rebuild the New Paltz branch’s wordpress site.<br><br>
-By the end of the project I had completely rebuilt the website from the ground up, bringing it into the modern era of wordpress. as well as updating the site to be usable on mobile devices. <br><br>
-Some of my favorite aspects I built into the new site was implementing mail chimp implementation and improving the workflow from google calendar to the website, creating a more self-sufficient website that operates more freely with less direct involvement from moderators.
-</p>
-  </div> </div>
 
   <div class="content1 project-row">
   <div class="image">
-  <LargePin pic="/img/pin/hotw-large.webp" link="https://losquadm1.github.io/historyofweb/" />
+  <LargePin pic="/img/pin/hotw-large.webp" alt="History of the Web" link="/web-design/hotw" />
   </div>
   <div class="text">
 <h2>History of the Web</h2>
@@ -84,7 +85,7 @@ History of the Web is a guided tour through the internet, hosted by everyone’s
 
 <div class="content1 project-row">
   <div class="image">
-  <LargePin pic="/img/pin/chami-large.webp" link="/ui-ux/chami" />
+  <LargePin pic="/img/pin/chami-large.webp" alt="Chami" link="/web-design/chami" />
   </div>
   <div class="text">
 <h2>Chami</h2>
@@ -149,6 +150,11 @@ padding-right:30px;
   line-height: 1.25;
 }
 
+.direct-link-note{
+  font-size: 0.7em;
+  font-weight: 400;
+}
+
 .text .year{
   margin-top: 0;
   margin-bottom: 10px;
@@ -161,7 +167,7 @@ padding-right:30px;
 }
 
 
-@media (max-width: 768px){
+@media (max-width: 1250px){
 .image{
   padding-left:10px;
   padding-right:10px;
@@ -170,6 +176,14 @@ padding-right:30px;
 .project-row{
   grid-template-columns: 1fr;
   gap: 0;
+}
+
+.project-row .text{
+  order: 1;
+}
+
+.project-row .image{
+  order: 2;
 }
 }
 

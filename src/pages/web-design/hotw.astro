@@ -1,0 +1,87 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SampleComponent from "@components/SampleComponent.astro";
+import Container from "@components/Container.astro";
+import AstroLogo from "@assets/images/astro-logo-light-gradient.png";
+import { Content as SampleMarkdown } from "@content/sample-markdown.md";
+import { Image } from "astro:assets";
+import Header from "@components/Header.astro"
+import HeaderMobile from "@components/HeaderMobile.astro"
+import Footer from "@components/Footer.astro"
+import SmallPin from "@components/smallpin.astro"
+---
+
+<Layout title="History of the Web">
+  <Container>
+
+  <Header/>
+    <HeaderMobile/>
+  <div class="body">
+
+   <h1>History of the Web</h1>
+   <div class="intro">
+<p class="intro-built-for">Built for SUNY New Paltz’s Spring 2024 Web Design 1 course.</p>
+<p class="intro-details">
+History of the Web is a guided tour through the internet, hosted by everyone’s favorite artificial personality HostBot! This was the first website I had ever built, a great learning experiece that was very ambitious at the time. The project was recently updated to work on desktop, as it was originally built for mobile devices exclusively.</p>
+    </div>
+
+   <h2>History of the Web Website Link</h2>
+    <SmallPin pic="/img/pin/hotw-small.webp" title='History of the Web' link="https://losquadm1.github.io/historyofweb/" />
+
+    <h2>Brand Guidelines(Original)</h2>
+     <a class="pdf-link" href="/img/pdf/History of the Internet Case-Study.pdf"><img class="pdf-preview" src="/img/pdf/hotw.webp" alt="History of the Internet Case-Study PDF"></a>
+
+  </div>
+  <Footer/>
+
+  </Container>
+  </Layout>
+
+  <style>
+.intro{
+    max-width: 800px
+}
+
+.intro-built-for{
+    margin-top: 0;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.intro-details{
+    margin-top: 0;
+    text-indent: 2em;
+}
+
+    .iframe{
+        width: 200%;
+    }
+
+    .body{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+
+
+    .pdf-link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .pdf-preview{
+            object-fit: contain;
+            padding: 10px;
+            padding-left: 15px;
+            max-width: 450px;
+            margin-left: 0;
+            filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
+            transition: filter 280ms ease;
+        }
+
+        .pdf-preview:hover,
+        .pdf-preview:focus-visible{
+            filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15)) brightness(0.7);
+        }
+  </style>

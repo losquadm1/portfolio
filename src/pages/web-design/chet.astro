@@ -1,24 +1,37 @@
-<Layout title="Astro Starter">
+---
+import Layout from "@layouts/Layout.astro";
+import SampleComponent from "@components/SampleComponent.astro";
+import Container from "@components/Container.astro";
+import AstroLogo from "@assets/images/astro-logo-light-gradient.png";
+import { Content as SampleMarkdown } from "@content/sample-markdown.md";
+import { Image } from "astro:assets";
+import Header from "@components/Header.astro"
+import HeaderMobile from "@components/HeaderMobile.astro"
+import Footer from "@components/Footer.astro"
+import SmallPin from "@components/smallpin.astro"
+---
+
+<Layout title="The Chet Show Thesis Site">
   <Container>
 
   <Header/>
     <HeaderMobile/>
-  <div class="chami">
-   <h1>Chami</h1>
+  <div class="body">
+
+   <h1>"The Chet Show" Thesis Site</h1>
    <div class="intro">
-<p> &#9;Chami is a mockup messenger app that I had built for my Visual Language class in 2022.
-<br><br>
- &#9; This project is one of my strongest when it comes to representing my illustrative abilities, especially under the guise of branding. Creating the Chami Bird mascot was a lot of fun and being able to use the adorable little guy to create a fun and unique brand was an aspect of the project I will never forget. I recently brought this project back for my Web Accessibility course, building an updated accessibility-based branding guidelines webpage. Going more in depth on the legibility and inclusiveness of the brand’s UI elements.
+<p class="intro-built-for">Built for SUNY New Paltz’s 2026 Thesis course.</p>
+<p class="intro-details">
+“The Chet Show” was a rounchy college-comedy short film series that I had created alongside my goodfriend Candice Leach. The project was a very fun experience and had a very high production value.</p>
+<br><p class="intro-details">For my thesis I decided to document this project through my knowledge of web design. Specifically due to the large scope of the series and how the skills I utilized to manage it all were learnt more from my years of doing design work. In the end <a href="https://thechetshow.com" >thechetshow.com</a> ended up being the largest website I had ever developed up until this point. Utilizing all the content and design skills I had built up until this point, I was able to create a website that acts as a truly memorable user experience.
 </p>
     </div>
-   <h2>Mockup</h2>
-   <img src="/img/chamimockup.webp" alt="A mockup of the Chami app, consisting of 3 screens. A loading page, the home page and a group chat mockup." />
-   
-   <h2>Accessable Brand Guidelines</h2>
-   <a href="https://chamibrand.netlify.app/">https://chamibrand.netlify.app/ <br> <img src="/img/chami.png" alt=""/></a>
+
+   <h2>The Chet Show Website Link</h2>
+    <SmallPin pic="/img/pin/chet-small.webp" title='"The Chet Show" Thesis Site' link="https://thechetshow.com" />
 
     <h2>Brand Guidelines(Original)</h2>
-    <a href="/img/ChamiDesignDoc.pdf" >[placeholder text: PDF Link]</a>
+     <a class="pdf-link" href="/img/pdf/Chet Process Book.pdf"><img class="pdf-preview" src="/img/pdf/Chet.webp" alt="Chet Thesis Process Book PDF"></a>
 
   </div>
   <Footer/>
@@ -30,34 +43,47 @@
 .intro{
     max-width: 800px
 }
+
+.intro-built-for{
+    margin-top: 0;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.intro-details{
+    margin-top: 0;
+    text-indent: 2em;
+}
+
     .iframe{
         width: 200%;
     }
 
-    .chami{
+    .body{
         display: flex;
         flex-direction: column; 
         align-items: center;
     }
 
-    .chami img{
-        max-width: 50vw;
-        padding-bottom: 50px;
-    }
 
-    .chami a{
+    .pdf-link{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .chami a img{
-        width:500px;
-        filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
-        padding-left:30px;
-        padding-right:30px; 
-}
-    .chami a img:hover{
-        filter: brightness(0.7)
-}
+        .pdf-preview{
+            object-fit: contain;
+            padding: 10px;
+            padding-left: 15px;
+            max-width: 450px;
+            margin-left: 0;
+            filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
+            transition: filter 280ms ease;
+        }
+
+        .pdf-preview:hover,
+        .pdf-preview:focus-visible{
+            filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15)) brightness(0.7);
+        }
   </style>

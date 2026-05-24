@@ -11,7 +11,7 @@ import Footer from "@components/Footer.astro"
 import SmallPin from "@components/smallpin.astro"
 ---
 
-<Layout title="Astro Starter">
+<Layout title="Chami">
   <Container>
 
   <Header/>
@@ -19,19 +19,20 @@ import SmallPin from "@components/smallpin.astro"
   <div class="chami">
    <h1>Chami</h1>
    <div class="intro">
-<p> &#9;Chami is a mockup messenger app that I had built for my Visual Language class in 2022.
+<p class="intro-built-for">Built for SUNY New Paltz’s Fall 2022 Visual Language course.</p>
+<p class="intro-details">Chami is a mockup messenger app that I had built for my Visual Language class in 2022.
 <br><br>
- &#9; This project is one of my strongest when it comes to representing my illustrative abilities, especially under the guise of branding. Creating the Chami Bird mascot was a lot of fun and being able to use the adorable little guy to create a fun and unique brand was an aspect of the project I will never forget. I recently brought this project back for my Web Accessibility course, building an updated accessibility-based branding guidelines webpage. Going more in depth on the legibility and inclusiveness of the brand’s UI elements.
+This project is one of my strongest when it comes to representing my illustrative abilities, especially under the guise of branding. Creating the Chami Bird mascot was a lot of fun and being able to use the adorable little guy to create a fun and unique brand was an aspect of the project I will never forget. I recently brought this project back for my Web Accessibility course, building an updated accessibility-based branding guidelines webpage. Going more in depth on the legibility and inclusiveness of the brand’s UI elements.
 </p>
     </div>
    <h2>Mockup</h2>
    <img src="/img/chamimockup.webp" alt="A mockup of the Chami app, consisting of 3 screens. A loading page, the home page and a group chat mockup." />
    
    <h2>Accessable Brand Guidelines</h2>
-   <SmallPin compact pic="/img/pin/chami-small.webp" title="Accessible Brand Guidelines" link="https://chamibrand.netlify.app/" />
+    <SmallPin pic="/img/pin/chami-small.webp" title="Accessible Brand Guidelines" link="https://chamibrand.netlify.app/" />
 
     <h2>Brand Guidelines(Original)</h2>
-    <a href="/img/ChamiDesignDoc.pdf" >[placeholder text: PDF Link]</a>
+     <a class="pdf-link" href="/img/pdf/ChamiDesignDoc.pdf"><img class="pdf-preview" src="/img/pdf/Chami.webp" alt="Chami Design Document PDF"></a>
 
   </div>
   <Footer/>
@@ -43,6 +44,18 @@ import SmallPin from "@components/smallpin.astro"
 .intro{
     max-width: 800px
 }
+
+.intro-built-for{
+    margin-top: 0;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.intro-details{
+    margin-top: 0;
+    text-indent: 2em;
+}
+
     .iframe{
         width: 200%;
     }
@@ -54,23 +67,30 @@ import SmallPin from "@components/smallpin.astro"
     }
 
     .chami img{
-        max-width: 50vw;
+        width: 1000px;
+        padding-left:20px;
+        padding-right:20px;
         padding-bottom: 50px;
     }
 
-    .chami a{
+    .pdf-link{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .chami a img{
-        width:500px;
-        filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
-        padding-left:30px;
-        padding-right:30px; 
-}
-    .chami a img:hover{
-        filter: brightness(0.7)
-}
+        .pdf-preview{
+            object-fit: contain;
+            padding: 10px;
+            padding-left: 15px;
+            max-width: 450px;
+            margin-left: 0;
+            filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
+            transition: filter 280ms ease;
+        }
+
+        .pdf-preview:hover,
+        .pdf-preview:focus-visible{
+            filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15)) brightness(0.7);
+        }
   </style>
