@@ -61,6 +61,11 @@
 #mobileCloseSidebar:focus-visible img{
     opacity: 0.55;
 }
+
+#mobileCloseSidebar:active img,
+#mobileCloseSidebar:focus-visible:active img{
+    opacity: 0.4;
+}
 button{
     background: none;
     border: none;
@@ -87,6 +92,11 @@ button p{
 
 #mobileMenuToggle img:hover{
   filter: brightness(0.7)
+}
+
+#mobileMenuToggle:active img,
+#mobileMenuToggle:focus-visible:active img{
+    filter: brightness(0.6)
 }
 
 
@@ -171,8 +181,31 @@ ul {
     display: flex;
     align-items: center;
 }
-.navbar a:hover{
-    color: red;
+
+.sidebar a{
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    padding: 4px 8px;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.sidebar a:hover{
+    border-color: transparent;
+    background: #FAF6B1;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar a:active,
+.sidebar a:focus-visible:active{
+    filter: brightness(0.7);
+}
+
+.sidebar a:focus-visible{
+    border-color: transparent;
+    background: #FAF6B1;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav {

@@ -21,7 +21,6 @@ import SmallPin from "@components/smallpin.astro"
    <div class="intro">
 <p class="intro-built-for">Built for SUNY New Paltz’s Fall 2022 Visual Language course.</p>
 <p class="intro-details">Chami is a mockup messenger app that I had built for my Visual Language class in 2022.
-<br><br>
 This project is one of my strongest when it comes to representing my illustrative abilities, especially under the guise of branding. Creating the Chami Bird mascot was a lot of fun and being able to use the adorable little guy to create a fun and unique brand was an aspect of the project I will never forget. I recently brought this project back for my Web Accessibility course, building an updated accessibility-based branding guidelines webpage. Going more in depth on the legibility and inclusiveness of the brand’s UI elements.
 </p>
     </div>
@@ -54,6 +53,7 @@ This project is one of my strongest when it comes to representing my illustrativ
 .intro-details{
     margin-top: 0;
     text-indent: 2em;
+    padding-bottom: 20px;
 }
 
     .iframe{
@@ -92,5 +92,10 @@ This project is one of my strongest when it comes to representing my illustrativ
         .pdf-preview:hover,
         .pdf-preview:focus-visible{
             filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15)) brightness(0.7);
+        }
+
+        .pdf-preview:active,
+        .pdf-preview:focus-visible:active{
+            filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15)) brightness(0.6);
         }
   </style>

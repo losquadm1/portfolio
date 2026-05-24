@@ -31,7 +31,7 @@ import SmallPin from "@components/smallpin.astro"
       <img class="tape" src="/img/reusable/tape.webp" alt="" />
       <div class="imgds">
         <img src="/img/reusable/rippedpaper.webp" alt="" />
-        <h2>Some Personal Favorites:</h2>
+        <h2 class="thin">Some Personal Favorites:</h2>
       </div>
     </div>
     <div class="favorites">
@@ -48,7 +48,9 @@ import SmallPin from "@components/smallpin.astro"
 </Layout>
 
 <style>
-
+.thin{
+  font-weight: 400;
+}
 
   :global(body){
     overflow-x: hidden;
@@ -446,6 +448,10 @@ padding-bottom: 10px;
 
 .item img:hover{
   filter: brightness(0.7)
+}
+
+.item img:active{
+  filter: brightness(0.6)
 }
 @media (max-width: 590px){
 

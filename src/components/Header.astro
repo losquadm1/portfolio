@@ -156,6 +156,10 @@ filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.2));
   filter: brightness(0.7)
 }
 
+.left a:active img{
+    filter: brightness(0.6)
+}
+
 .header a{
     font-weight: 650;
     color: black;
@@ -174,8 +178,29 @@ filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.2));
     padding: 0 4px;
 }
 
-.navbar a:hover{
-    color: red;
+.navbar .hideOnMobile a{
+    border: 2px solid transparent;
+    border-radius: 2px;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.navbar .hideOnMobile a:hover{
+    border-color: transparent;
+    background: #FAF6B1;
+    color: #111111;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .hideOnMobile a:active,
+.navbar .hideOnMobile a:focus-visible:active{
+    filter: brightness(0.7);
+}
+
+.navbar .hideOnMobile a:focus-visible{
+    border-color: transparent;
+    background: #FAF6B1;
+    color: #111111;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav {
