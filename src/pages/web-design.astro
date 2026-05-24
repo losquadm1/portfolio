@@ -1,0 +1,177 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SampleComponent from "@components/SampleComponent.astro";
+import Container from "@components/Container.astro";
+import AstroLogo from "@assets/images/astro-logo-light-gradient.png";
+import { Content as SampleMarkdown } from "@content/sample-markdown.md";
+import Header from "@components/Header.astro"
+import HeaderMobile from "@components/HeaderMobile.astro"
+import Footer from "@components/Footer.astro"
+import LargePin from "@components/largepin.astro"
+---
+
+<Layout title="Web Design">
+  <Container>
+
+  <Header/>
+  <HeaderMobile/>
+  <div class="page">
+
+<h1>UI/UX Design</h1>
+<div class="content1 project-row">
+
+<div class="image">
+  <LargePin pic="/img/pin/chet-large.webp" link="https://thechetshow.com" />
+</div>
+
+<div class="text">
+  <h2>"The Chet Show" Thesis Site</h2>
+
+<p class="year">(2026)</p>
+<p>
+Built for SUNY New Paltz’s 2026 Thesis <br><br> 
+
+“The Chet Show” was a rounchy college-comedy short film series that I had created alongside my goodfriend Candice Leach. The project was very fun and had a very high production value.<br><br>For my thesis I decided to document this project through my knowledge of web design simply due to the large scope of the series and how the skills I utilized to manage it all were learnt more from my years of doing design work. In the end <a href="https://thechetshow.com" >thechetshow.com</a> ended up being the largest website I had ever developed up until this point. Utilizing all the content and design skills I had built up until this point, I was able to create a website that acts as a truly memorable user experience.
+</p>
+  </div>
+
+</div>
+
+<div class="content1 project-row">
+
+<div class="image">
+  <LargePin pic="/img/pin/launch-large.webp" link="https://launch.michaellosquadro.com" />
+</div>
+
+<div class="text">
+  <h2>My Launch Page</h2>
+
+<p class="year">(2025)</p>
+<p>
+Built for SUNY New Paltz’s Fall 2025 Web Design 2 course.<br><br> This launch page was built to act as a small highway, linking together all of my congruent projects and websites. Going for a very simple aesthetic, this was primarily used as a playground for some javascript functionality.<br><br> Make sure to check out this site on desktop for some fun interactive visuals!
+</p>
+  </div>
+
+</div>
+
+<div class="content1 project-row">
+  <div class="image">
+  <LargePin pic="/img/pin/uup-large.webp" link="https://uuphost.org/newpaltzwp" />
+  </div> 
+  <div class="text">
+<h2>New Paltz UUP Website</h2>
+<p class="year">(2025)</p>
+<p>
+Created for SUNY New Paltz’s Fall 2025 Client Design Course.<br><br> I was assigned as an Intern for the UUP’s New Paltz branch. In this role I was tasked to rebuild the New Paltz branch’s wordpress site.<br><br>
+By the end of the project I had completely rebuilt the website from the ground up, bringing it into the modern era of wordpress. as well as updating the site to be usable on mobile devices. <br><br>
+Some of my favorite aspects I built into the new site was implementing mail chimp implementation and improving the workflow from google calendar to the website, creating a more self-sufficient website that operates more freely with less direct involvement from moderators.
+</p>
+  </div> </div>
+
+  <div class="content1 project-row">
+  <div class="image">
+  <LargePin pic="/img/pin/hotw-large.webp" link="https://losquadm1.github.io/historyofweb/" />
+  </div>
+  <div class="text">
+<h2>History of the Web</h2>
+<p class="year">(2024)</p>
+<p>
+Built for SUNY New Paltz’s Spring 2024 Web Design 1 course<br><br>
+
+History of the Web is a guided tour through the internet, hosted by everyone’s favorite artificial personality HostBot! This was the first website I had ever built, a great learning experiece that was very ambitious at the time. The project was recently updated to work on desktop, as it was originally built for mobile devices exclusively. 
+</p>
+  </div></div>
+
+<div class="content1 project-row">
+  <div class="image">
+  <LargePin pic="/img/pin/chami-large.webp" link="/ui-ux/chami" />
+  </div>
+  <div class="text">
+<h2>Chami</h2>
+<p class="year">(2022)</p>
+
+<p>
+
+Built for SUNY New Paltz’s Fall 2022 Visual Language course<br><br>
+Chami is an online messenger app concept created for the 2022 Visual Language course offered at SUNY New Paltz. The project focused around creating a fun and interesting brand as well as some mockups for a few of the app's pages.
+</p>
+  </div></div>
+
+
+</div>
+  
+</div>
+
+  </div>
+  <Footer/>
+
+  </Container>
+  </Layout>
+
+
+  <style>
+.page{
+  flex-direction: column;
+  display: flex;
+  align-items: center
+}
+
+.content1{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+padding-top:20px;
+justify-content: center;
+}
+
+.project-row{
+  display: grid;
+  grid-template-columns: minmax(0, 600px) minmax(360px, 600px);
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.project-row .image,
+.project-row .text{
+  width: 100%;
+  min-width: 0;
+}
+
+.text{
+  max-width:600px;
+padding-left:30px;
+padding-right:30px; 
+}
+
+.text h2{
+  margin-bottom: 1px;
+  line-height: 1.25;
+}
+
+.text .year{
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 0.92em;
+}
+
+.text p{
+  margin-top: 0;
+}
+
+
+@media (max-width: 768px){
+.image{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.project-row{
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+}
+
+
+  </style>
