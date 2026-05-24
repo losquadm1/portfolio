@@ -24,13 +24,15 @@ import SmallPin from "@components/smallpin.astro"
 This project is one of my strongest when it comes to representing my illustrative abilities, especially under the guise of branding. Creating the Chami Bird mascot was a lot of fun and being able to use the adorable little guy to create a fun and unique brand was an aspect of the project I will never forget. I recently brought this project back for my Web Accessibility course, building an updated accessibility-based branding guidelines webpage. Going more in depth on the legibility and inclusiveness of the brand’s UI elements.
 </p>
     </div>
-   <h2>Mockup</h2>
-   <img src="/img/chamimockup.webp" alt="A mockup of the Chami app, consisting of 3 screens. A loading page, the home page and a group chat mockup." />
+    <h2>Mockup</h2>
+    <img class="mockup-image" src="/img/chamimockup.webp" alt="A mockup of the Chami app, consisting of 3 screens. A loading page, the home page and a group chat mockup." />
    
-   <h2>Accessable Brand Guidelines</h2>
-    <SmallPin pic="/img/pin/chami-small.webp" title="Accessible Brand Guidelines" link="https://chamibrand.netlify.app/" />
+    <h2><a href="https://chamibrand.netlify.app/">Accessable Brand Guidelines</a></h2>
+        <div class="smallpin-wrap">
+            <SmallPin pic="/img/pin/chami-small.webp" title="Accessible Brand Guidelines" link="https://chamibrand.netlify.app/" />
+        </div>
 
-    <h2>Brand Guidelines(Original)</h2>
+    <h2><a href="/img/pdf/ChamiDesignDoc.pdf">Brand Guidelines(Original)</a></h2>
      <a class="pdf-link" href="/img/pdf/ChamiDesignDoc.pdf"><img class="pdf-preview" src="/img/pdf/Chami.webp" alt="Chami Design Document PDF"></a>
 
   </div>
@@ -41,7 +43,8 @@ This project is one of my strongest when it comes to representing my illustrativ
 
   <style>
 .intro{
-    max-width: 800px
+    max-width: 800px;
+    padding-bottom: 50px;
 }
 
 .intro-built-for{
@@ -53,7 +56,26 @@ This project is one of my strongest when it comes to representing my illustrativ
 .intro-details{
     margin-top: 0;
     text-indent: 2em;
-    padding-bottom: 20px;
+}
+
+.smallpin-wrap{
+    padding-bottom: 50px;
+}
+
+h2{
+    text-align: center;
+}
+
+h2 a{
+    color: black;
+    text-decoration-color: var(--color-accent);
+    border: 2px solid transparent;
+    border-radius: 2px;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+h1{
+    text-align: center;
 }
 
     .iframe{
@@ -66,7 +88,7 @@ This project is one of my strongest when it comes to representing my illustrativ
         align-items: center;
     }
 
-    .chami img{
+    .mockup-image{
         width: 1000px;
         padding-left:20px;
         padding-right:20px;
@@ -83,7 +105,7 @@ This project is one of my strongest when it comes to representing my illustrativ
             object-fit: contain;
             padding: 10px;
             padding-left: 15px;
-            max-width: 450px;
+            width: 450px;
             margin-left: 0;
             filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
             transition: filter 280ms ease;
@@ -97,5 +119,36 @@ This project is one of my strongest when it comes to representing my illustrativ
         .pdf-preview:active,
         .pdf-preview:focus-visible:active{
             filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15)) brightness(0.6);
+        }
+
+        @media (min-width: 769px){
+            h2 a:hover,
+            h2 a:focus-visible{
+                border-color: transparent;
+                background: #FAF6B1;
+                color: #303030;
+                text-decoration: none;
+                box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            h2 a:active,
+            h2 a:focus-visible:active{
+                filter: brightness(0.7);
+            }
+        }
+
+        @media (max-width: 768px){
+            h2 a:hover,
+            h2 a:focus-visible{
+                color: #303030;
+                text-decoration-color: currentColor;
+            }
+
+            .chami{
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+                box-sizing: border-box;
+            }
         }
   </style>

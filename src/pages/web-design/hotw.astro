@@ -25,10 +25,12 @@ import SmallPin from "@components/smallpin.astro"
 History of the Web is a guided tour through the internet, hosted by everyone’s favorite artificial personality HostBot! This was the first website I had ever built, a great learning experiece that was very ambitious at the time. The project was recently updated to work on desktop, as it was originally built for mobile devices exclusively.</p>
     </div>
 
-   <h2>History of the Web Website Link</h2>
-    <SmallPin pic="/img/pin/hotw-small.webp" title='History of the Web' link="https://losquadm1.github.io/historyofweb/" />
+    <h2><a href="https://losquadm1.github.io/historyofweb/">History of the Web Website Link</a></h2>
+        <div class="smallpin-wrap">
+            <SmallPin pic="/img/pin/hotw-small.webp" title='History of the Web' link="https://losquadm1.github.io/historyofweb/" />
+        </div>
 
-    <h2>Brand Guidelines(Original)</h2>
+    <h2><a href="/img/pdf/History of the Internet Case-Study.pdf">Brand Guidelines(Original)</a></h2>
      <a class="pdf-link" href="/img/pdf/History of the Internet Case-Study.pdf"><img class="pdf-preview" src="/img/pdf/hotw.webp" alt="History of the Internet Case-Study PDF"></a>
 
   </div>
@@ -39,7 +41,8 @@ History of the Web is a guided tour through the internet, hosted by everyone’s
 
   <style>
 .intro{
-    max-width: 800px
+    max-width: 800px;
+    padding-bottom: 50px;
 }
 
 .intro-built-for{
@@ -51,6 +54,26 @@ History of the Web is a guided tour through the internet, hosted by everyone’s
 .intro-details{
     margin-top: 0;
     text-indent: 2em;
+}
+
+.smallpin-wrap{
+    padding-bottom: 50px;
+}
+
+h2{
+    text-align: center;
+}
+
+h2 a{
+    color: black;
+    text-decoration-color: var(--color-accent);
+    border: 2px solid transparent;
+    border-radius: 2px;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+h1{
+    text-align: center;
 }
 
     .iframe{
@@ -74,7 +97,7 @@ History of the Web is a guided tour through the internet, hosted by everyone’s
             object-fit: contain;
             padding: 10px;
             padding-left: 15px;
-            max-width: 450px;
+            width: 450px;
             margin-left: 0;
             filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15));
             transition: filter 280ms ease;
@@ -88,5 +111,36 @@ History of the Web is a guided tour through the internet, hosted by everyone’s
         .pdf-preview:active,
         .pdf-preview:focus-visible:active{
             filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.15)) brightness(0.6);
+        }
+
+        @media (min-width: 769px){
+            h2 a:hover,
+            h2 a:focus-visible{
+                border-color: transparent;
+                background: #FAF6B1;
+                color: #303030;
+                text-decoration: none;
+                box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            h2 a:active,
+            h2 a:focus-visible:active{
+                filter: brightness(0.7);
+            }
+        }
+
+        @media (max-width: 768px){
+            h2 a:hover,
+            h2 a:focus-visible{
+                color: #303030;
+                text-decoration-color: currentColor;
+            }
+
+            .body{
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+                box-sizing: border-box;
+            }
         }
   </style>
