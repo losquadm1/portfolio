@@ -222,17 +222,49 @@ padding-right:30px;
 
 @media (max-width: 768px){
 
+    .project-row{
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .project-row .text{
+      display: contents;
+    }
+
+    .project-row .text h2{
+      order: 1;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-bottom: 1px;
+    }
+
+    .project-row .text .year{
+      order: 2;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-bottom: 0px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    .project-row .image{
+      order: 3;
+      padding-bottom: 30px;
+    }
+
+    .project-row .text p:not(.year){
+      order: 4;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
     .text h2 a:hover,
     .text h2 a:focus-visible{
       color: #303030;
       text-decoration-color: currentColor;
     }
 
-   
-
-    .text .year{
-      margin-top: 5px;
-    }
   }
 
   </style>

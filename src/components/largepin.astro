@@ -8,9 +8,8 @@ const rotation = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
     <div class="pin">
       <img src="/img/pin/pin.webp" alt="" />
     </div>
-    <img class="pin-image" src={pic} alt={alt} />
-    <div class="paper">
-      <img class="paper-image" src="/img/pin/largebg.webp" alt="" />
+    <div class="pin-image-frame">
+      <img class="pin-image" src={pic} alt={alt} />
     </div>
   </div>
 </a>
@@ -49,20 +48,6 @@ const rotation = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
     filter: brightness(0.6);
   }
 
-  .paper {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .paper-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: top center;
-    display: block;
-  }
-
   .pin {
     position: absolute;
     top: -15px;
@@ -80,15 +65,24 @@ const rotation = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
     display: block;
   }
 
-  .pin-image {
+  .pin-image-frame {
     position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    height: 90%;
+    inset: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    background-image: url('/img/pin/largebg.webp');
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  .pin-image {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     object-position: top center;
-    z-index: 1;
+    display: block;
   }
 
   p {
@@ -130,8 +124,7 @@ const rotation = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
 
   @media print {
     .pin,
-    .paper,
-    .paper-image {
+    .pin-image-frame {
       display: none !important;
     }
 
